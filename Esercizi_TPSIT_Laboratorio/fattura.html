@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LuxeWardrobeWorld - Fattura</title>
+    <link rel="icon" type="image/x-icon" href="favicon_fattura.png">
+
+<style>
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 300px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: black;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: lightgray;
+      color: black;
+    }
+    
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      z-index: 999;
+      height: 600px;
+      width: 600px;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+    }
+    
+    #popupButtons {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #popupButtons button {
+        background-color: black;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 8px; /* Aggiungi uno spazio solo al pulsante "Chiudi" */
+    }
+
+    #popupButtons button:last-child {
+        margin-right: 0; /* Rimuovi lo spazio dal pulsante "Torna al Catalogo" */
+    }
+
+    #popupButtons button:hover {
+        background-color: lightgray;
+        color: black;
+    }
+      
+</style>
+  </head>
+
+  <body>
+    <center>
+        
+        <h1>COMPILA IL FORM PER <br> STAMPARE LA FATTURA</h1>
+        
+        <br>
+        
+        <form id="myForm">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required>
+        
+          <label for="cognome">Cognome:</label>
+          <input type="text" id="cognome" name="cognome" required>
+        
+          <label for="dataNascita">Data di Nascita:</label>
+          <input type="date" id="dataNascita" name="dataNascita" required>
+        
+          <label for="telefono">Telefono:</label>
+          <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" required>
+        
+          <label for="indirizzoFatturazione">Indirizzo di Fatturazione:</label>
+          <input type="text" id="indirizzoFatturazione" name="indirizzoFatturazione" required>
+        
+          <label for="indirizzoSpedizione">Indirizzo di Spedizione:</label>
+          <input type="text" id="indirizzoSpedizione" name="indirizzoSpedizione" required>
+        
+          <button type="button" onclick="mostraPopup()">Stampa la fattura</button>
+        </form>
+      
+    </center>
+    
+    <div id="popup" class="popup">
+        <h2>Dati Inseriti</h2>
+        <div id="popupContent"></div>
+        <div id="popupButtons">
+            <button onclick="chiudiPopup()">Chiudi</button>
+            <button onclick="returnToCatalogo()">Torna al Catalogo</button>
+        </div>
+    </div>
+    
+    <div id="overlay" class="overlay"></div>
+
+    <script>
+    
+        function mostraPopup() {
+            var form = document.getElementById('myForm');
+            if (form.checkValidity()) {
+                // Raccogli i dati dal form
+                var nome = document.getElementById('nome').value;
+                var cognome = document.getElementById('cognome').value;
+                var dataNascita = document.getElementById('dataNascita').value;
+                var telefono = document.getElementById('telefono').value;
+                var indirizzoFatturazione = document.getElementById('indirizzoFatturazione').value;
+                var indirizzoSpedizione = document.getElementById('indirizzoSpedizione').value;
+                
+                // Recupera la stringa JSON da localStorage e convertila in un array
+                var storedArray = localStorage.getItem('cart');
+                var cart = JSON.parse(storedArray);
+                
+                // Ora puoi utilizzare l'array nella seconda pagina
+                var stampaDatiElement = document.getElementById("StampaDati");
+                
+                // Itera sull'array e costruisci una stringa con un a capo ogni tre elementi
+                var outputString = "";
+                for (var i = 0; i < cart.length; i++) {
+                    outputString += cart[i];
+                    
+                    // Aggiungi un a capo ogni tre elementi (considerando l'indice basato su zero)
+                    if ((i + 1) % 3 === 0) {
+                        outputString += "<br>";
+                    } else {
+                        // Aggiungi uno spazio tra gli elementi
+                        outputString += " ";
+                    }
+                }
+            
+                // Creare una stringa con i dati
+                var datiUtenteString = `
+                  <p><strong>Nome:</strong> ${nome}</p>
+                  <p><strong>Cognome:</strong> ${cognome}</p>
+                  <p><strong>Data di Nascita:</strong> ${dataNascita}</p>
+                  <p><strong>Telefono:</strong> ${telefono}</p>
+                  <p><strong>Indirizzo di Fatturazione:</strong> ${indirizzoFatturazione}</p>
+                  <p><strong>Indirizzo di Spedizione:</strong> ${indirizzoSpedizione}</p>
+                  <p><strong>Prodotti Acquistati:</strong><br> ${outputString}</p>
+                `;
+            
+                // Inserisci la stringa nel popupContent
+                document.getElementById('popupContent').innerHTML = datiUtenteString;
+            
+                // Mostra il popup e l'overlay
+                document.getElementById('popup').style.display = 'block';
+                document.getElementById('overlay').style.display = 'block';
+            } else {
+                alert("Completa tutti i campi obbligatori.");
+            }
+          }
+        
+          function chiudiPopup() {
+            // Chiudi il popup e l'overlay
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+          }
+          
+          function returnToCatalogo(){
+              // Cambia l'URL della pagina
+              window.location.href = 'catalogo.html';
+          }
+      
+    </script>
+  </body>
+</html>
+

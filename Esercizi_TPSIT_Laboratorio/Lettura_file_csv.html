@@ -1,0 +1,116 @@
+<html>
+    <head>
+
+        <title>Lettura di un File Remoto CSV - AJAX XMLHttpRequest</title>
+
+        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1251/1251737.png?w=740&t=st=1670088758~exp=1670089358~hmac=ac302ee05cf1c6435159f818246fa2591abb992ec6c71037b9490d9151b56b80">
+
+        <style>
+
+          body {
+            background-image: url('https://i.pinimg.com/originals/68/e9/e8/68e9e879994d9a7b124bade7d8c63ac6.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+          }
+
+          .button {
+            background-color: #C0C0C0;
+            border-radius: 12px;
+            color: black;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+          }
+
+          .button:hover {
+            background-color: #5600a9;
+            color: white;
+          }
+
+          p {
+            color:white;
+          }
+
+          table, th, td {
+              border: 1px solid white;
+              border-collapse: collapse;
+          }
+
+          th, td {
+              padding: 15px;
+              text-align: center;
+          }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <form action="/action_page.php" method="get">
+
+            <button class="button" type="submit" formaction="index_laboratorio.html">Torna alla Home</button>
+
+            </form>
+
+            <table style="color: white;">
+                  <tbody id="tabella-body"></tbody>
+            </table>
+
+            <br>
+
+        <input class="button" type="button" onclick="LeggiFileCSV()" value="Leggi File Remoto CSV">
+
+        <script>
+
+            function LeggiFileCSV() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        let S = this.responseText;
+
+                        // Dividi il contenuto del file CSV in righe
+                        var r = S.split('\n');
+
+                        // Crea una tabella HTML per visualizzare i dati
+                        var t = '<table border="1">';
+
+                        // Leggi ciascuna riga del file CSV
+                        for (var x = 0; x < r.length; x++) {
+                            var riga = r[x];
+
+                            // Dividi la riga in colonne
+                            var c = riga.split(',');
+
+                            // Crea una riga della tabella
+                            t += '<tr>';
+
+                            // Leggi ciascuna colonna e aggiungila alla tabella
+                            for (var y = 0; y < c.length; y++) {
+                                t += '<td>' + c[y] + '</td>';
+                            }
+
+                            // Chiudi la riga
+                            t += '</tr>';
+                        }
+
+                        // Chiudi la tabella
+                        t += '</table>';
+
+                        // Mostra la tabella nell'elemento desiderato
+                        document.getElementById("tabella-body").innerHTML = t;
+                    }
+                };
+                xhttp.open("GET", "File_csv.csv", true);
+                xhttp.send();
+            }
+
+        </script>
+    </body>
+</html>

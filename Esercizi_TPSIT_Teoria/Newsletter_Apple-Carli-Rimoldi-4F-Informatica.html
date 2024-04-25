@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Newsletter Apple - Carli - Rimoldi - 4F - Informatica</title>
+  <link rel="icon" type="image/x-icon" href="https://www.freepnglogos.com/uploads/apple-logo-png/apple-logo-png-dallas-shootings-don-add-are-speech-zones-used-4.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+</head>
+
+<style>
+
+  h1, h3, label {
+    font-family: Audiowide;
+  }
+
+  .robot {
+    position: relative;
+  }
+
+  .centered-image {
+    position: relative;
+    left: 20%;
+    top: 40%;
+  }
+
+  .centered-text {
+    position: absolute;
+    top: 45%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+  }
+
+  .contenitore {
+    position: absolute;
+    left: 400px;
+    top: 280px;
+  }
+
+  .contenitore1 {
+    position: absolute;
+    left: 775px;
+    top: 275px;
+  }
+
+  .button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Audiowide;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid gray;
+    border-radius: 12px;
+  }
+
+  .button:hover {
+    background-color: gray;
+    color: white;
+  }
+
+</style>
+
+<body>
+
+  <br>
+
+  <center>
+    <img src="https://www.freepnglogos.com/uploads/apple-logo-png/apple-logo-png-dallas-shootings-don-add-are-speech-zones-used-4.png" alt="IMG non disponibile" style="width:100px; height:100px;">
+  </center>
+
+  <br>
+
+  <center>
+    <h1>ISCRIZIONE NEWSLETTER APPLE</h1>
+    <h3>Completa i campi obbligatori (*)</h3>
+  </center>
+
+  <div class="contenitore">
+    <form action="Pagina - Ringraziamento.html">
+      <label for="nome">*Inserisci nome:</label>
+      <input type="text" id="nome" name="nome" value="Mario"><br><br>
+      <label for="cognome">*Inserisci cognome:</label>
+  	   <input type="text" id="cognome" name="cognome" value="Rossi"><br><br>
+       <label for="nascita">*Data di nascita:</label>
+  	   <input type="date" id="nascita" name="nascita"><br><br>
+       <label for="mail">*Indirizzo e-mail:</label>
+       <input type="text" id="mail" name="mail" value="mario.rossi@gmail.com"><br><br>
+       <label for="lavoro">Occupazione:</label>
+       <input type="text" id="lavoro" name="lavoro" value="Es. Operaio"><br><br>
+  	   <label for="residenza">Residenza:</label>
+  	   <input type="text" id="residenza" name="residenza" value="Es. Cornaredo"><br><br>
+     </form>
+   </div>
+
+   <div class="contenitore1">
+     <form action="Pagina - Ringraziamento.html">
+       <input type="checkbox" id="cb1" name="condizioni" value="Accetto le condizioni del servizio">
+       <label for="cb1">Accetto le condizioni del servizio</label><br><br>
+       <input type="checkbox" id="cb2" name="condizioni" value="Accetto il trattamento dei dati personali">
+       <label for="cb2">Accetto il trattamento dei dati personali</label><br><br>
+       <input type="checkbox" id="cb3" name="condizioni" value="Accetto di ricevere messaggi sui prodotti">
+       <label for="cb3">Accetto di ricevere messaggi sui prodotti</label><br><br><div class="robot">
+         <center>
+             <div class="robot">
+               <div class="centered-text">
+                 <input type="checkbox" id="cb1" name="condizioni" value="Confermo di non essere un robot">
+                 <label for="cb1">Non sono un robot</label>
+               </div>
+               <div class="centered-image">
+                 <img src="https://www.google.com/recaptcha/about/images/reCAPTCHA-enterprise.png" alt="IMG non disponibile" style="width:130px; height:65px;">
+               </div>
+             </div>
+           </center>
+       </div>
+
+       <center>
+         <input class="button" type="button" onclick="registrati()" value="Registrati Ora">
+       </center>
+
+     </form>
+   </div>
+
+   <script>
+
+   function registrati(){
+
+     const Dati = [];
+     Dati.push("Nome: " + document.getElementById("nome").value);
+     Dati.push("<br>Cognome: " + document.getElementById("cognome").value);
+     Dati.push("<br>Data di nascita: " + document.getElementById("nascita").value);
+     Dati.push("<br>Indirizzo Mail: " + document.getElementById("mail").value);
+     Dati.push("<br>Professione: " + document.getElementById("lavoro").value);
+     Dati.push("<br>Residenza: " + document.getElementById("residenza").value);
+     Dati.push("<br><br>Le condizioni da te accettate sono");
+
+     for(var i=0, j=1; i<4; i++, j++) {
+       var cond;
+       cond=document.getElementsByName("condizioni")[i]?.checked;
+       if(cond==true) {
+         Dati.push("<br> " + j + ") " + document.getElementsByName("condizioni")[i].value);
+       }
+     }
+
+     if (typeof(Storage) !== "undefined") {
+          localStorage.setItem("Dati", Dati);
+      }
+      else {
+          document.getElementById("registrati").innerHTML = "Il browser non supporta lo storage";
+
+      }
+      document.location.href="Pagina_Ringraziamento.html";
+   }
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+[
+  {
+    "NOME": "Edson Arantes do Nascimento (Pelé)",
+    "ETA": "Nascita(23 ottobre 1940) – Morte(29 dicembre 2022)",
+    "NAZIONALITA": "Brasiliana",
+    "PIEDE": "Destro",
+    "POSIZIONE": "Attaccante",
+    "SQUADRA": "Santos (1956-1974), New York Cosmos (1975-1977)",
+    "PRESENZE": "816",
+    "GOAL": "757",
+    "ASSIST": "250"
+    },
+    {
+    "NOME": "Diego Armando Maradona",
+    "ETA": "Nascita(30 ottobre 1960) – Morte(25 novembre 2020)",
+    "NAZIONALITA": "Argentina",
+    "PIEDE": "Sinistro",
+    "POSIZIONE": "Centrocampista/Attaccante",
+    "SQUADRA": "Argentinos Juniors (1976-1981), Boca Juniors (1981-1982), Barcelona (1982-1984), Napoli (1984-1991), Sevilla (1992-1993), Newell's Old Boys (1993-1994)",
+    "PRESENZE": "680",
+    "GOAL": "340",
+    "ASSIST": "150"
+    },
+     {
+    "NOME": "Hendrik Johannes Cruijff",
+    "ETA": "Nascita(25 aprile 1947) – Morte(24 marzo 2016)",
+    "NAZIONALITA": "Olandese",
+    "PIEDE": "Sinistro",
+    "POSIZIONE": "Centrocampista/Attaccante",
+    "SQUADRA": "Ajax (1964-1973, 1981-1983), Barcelona (1973-1978), Los Angeles Aztecs (1979-1980), Washington Diplomats (1980-1981), Levante (1981-1982), Feyenoord (1983-1984)",
+    "PRESENZE": "755",
+    "GOAL": "428",
+    "ASSIST": "75"
+    },
+     {
+    "NOME": "Lionel Andrés Messi",
+    "ETA": "36 anni",
+    "NAZIONALITA": "Argentino",
+    "PIEDE": "Sinistro",
+    "POSIZIONE": "Attaccante",
+    "SQUADRA": "Barcelona (2000-2021), Paris Saint-Germain (2021-2023), Inter Miami (2023-presente)",
+    "PRESENZE": "1043",
+    "GOAL": "819",
+    "ASSIST": "363"
+    },
+     {
+    "NOME": "Cristiano Ronaldo dos Santos Aveiro",
+    "ETA": "39 anni",
+    "NAZIONALITA": "Portoghese",
+    "PIEDE": "Destro",
+    "POSIZIONE": "Attaccante",
+    "SQUADRA": "Sporting Lisbon (2002-2003), Manchester United (2003-2009, 2021-presente, dato fino a gennaio 2022), Real Madrid (2009-2018), Juventus (2018-2021), Al Nassr (2022-presente)",
+    "PRESENZE": "1199",
+    "GOAL": "877",
+    "ASSIST": "250"
+    }
+]

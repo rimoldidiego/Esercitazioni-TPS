@@ -1,0 +1,47 @@
+[
+  {
+    "NOME": "Josep Guardiola",
+    "ETA": "53 Anni",
+    "NAZIONALITA": "Spagnolo",
+    "SQUADRE": "FC Barcelona(2008-2012), Bayern Monaco(2013-2016), Manchester City(2016-presente).",
+    "STILE": "Possesso di palla, gioco fluido, enfasi sull'attacco",
+    "TROFEI": "Numerosi titoli nazionali e internazionali con tutte e tre le squadre, inclusa la Champions League con il Barcelona (2009, 2011) e Bundesliga con il Bayern Monaco (2014, 2015).",
+    "CIT": "Il calcio è un gioco semplice; 22 uomini corrono dietro a un pallone per 90 minuti e alla fine, il tedesco vince sempre."
+  },
+  {
+    "NOME": "Jurgen Klopp",
+    "ETA": "56 Anni",
+    "NAZIONALITA": "Tedesco",
+    "SQUADRE": "Magonza(2001-2008), Borussia Dortmund(2008-2015), Liverpool FC(2015-presente).",
+    "STILE": "Pressing alto, gioco veloce, intensità.",
+    "TROFEI": "Ha vinto la Bundesliga due volte consecutive con il Borussia Dortmund (2011, 2012) e la Premier League con il Liverpool FC (2019-2020), oltre alla Champions League nel 2019.",
+    "CIT": "Il calcio è come la vita: dura 90 minuti, è imprevedibile e alla fine il Liverpool vince."
+  },
+  {
+    "NOME": "Diego Simeone",
+    "ETA": "53 Anni",
+    "NAZIONALITA": "Argentino",
+    "SQUADRE": "Racing Club(2006), Estudiantes(2006-2007), River Plate(2008), San Lorenzo(2009-2010), Catania(2011), Racing Club(2011), Atletico Madrid(2011-presente).",
+    "STILE": "Difensivo, compatto, contrattacco rapido.",
+    "TROFEI": "Ha vinto La Liga con l'Atletico Madrid nel 2014, oltre a diversi trofei nazionali e internazionali. Ha raggiunto due finali di Champions League nel 2014 e nel 2016.",
+    "CIT": "Siamo una squadra di operai in un mondo di artisti."
+  },
+  {
+    "NOME": "Zinedine Zidane",
+    "ETA": "51 Anni",
+    "NAZIONALITA": "Francese",
+    "SQUADRE": "Real Madrid Castilla(2014-2016), Real Madrid(2016-2018), Real Madrid(2019-2021).",
+    "STILE": "Possesso di palla, fluidità, tattiche flessibili.",
+    "TROFEI": "Ha vinto tre Champions League consecutive con il Real Madrid (2016, 2017, 2018), oltre a vari titoli nazionali e internazionali.",
+    "CIT": "La mia filosofia di calcio è semplice: tiki-taka con un tocco di magia francese."
+  },
+  {
+    "NOME": "Carlo Ancelotti",
+    "ETA": "64 Anni",
+    "NAZIONALITA": "Italiana",
+    "SQUADRE": "Reggiana(1995-1996), Parma(1996-1998), Juventus(1999-2001), AC Milan(2001-2009), Chelsea(2009-2011), Paris Saint-Germain(2012-2013), Real Madrid(2013-2015), Bayern Monaco(2016-2017), Napoli(2018-2019), Everton(2019-2021), Real Madrid(2021-presente).",
+    "STILE": "Bilanciato, tatticamente versatile, orientato al risultato.",
+    "TROFEI": "Ha vinto la Champions League tre volte come allenatore (con il Milan nel 2003 e nel 2007, e con il Real Madrid nel 2014). Ha anche conquistato diversi titoli nazionali in Italia, Inghilterra, Francia, Spagna e Germania.",
+    "CIT": "Il calcio è un gioco semplice. Ventidue uomini corrono dietro a una palla per 90 minuti e alla fine, Carlo Ancelotti vince."
+  }
+]

@@ -1,0 +1,58 @@
+<html ng-app="myApp" ng-controller="GiocatoriCtrl">
+
+<head>
+  <title>Giocatori</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
+
+  <style media="screen">
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+  </style>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>NOME</th>
+        <th>ETA</th>
+        <th>NAZIONALITA</th>
+        <th>PIEDE PREFERITO</th>
+        <th>POSIZIONE</th>
+        <th>SQUADRA</th>
+        <th>PRESENZE TOTALI</th>
+        <th>GOAL TOTALI</th>
+        <th>ASSIST TOTALI</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="giocatori in jsonData">
+        <td>{{ giocatori.NOME }}</td>
+        <td>{{ giocatori.ETA }}</td>
+        <td>{{ giocatori.NAZIONALITA }}</td>
+        <td>{{ giocatori.PIEDE }}</td>
+        <td>{{ giocatori.POSIZIONE }}</td>
+        <td>{{ giocatori.SQUADRA }}</td>
+        <td>{{ giocatori.PRESENZE }}</td>
+        <td>{{ giocatori.GOAL }}</td>
+        <td>{{ giocatori.ASSIST }}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

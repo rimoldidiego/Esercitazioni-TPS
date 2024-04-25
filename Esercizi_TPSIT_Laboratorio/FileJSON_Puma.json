@@ -1,0 +1,51 @@
+{
+  "Puma":[
+    {
+      "Img":"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/772855/15/mod01/fnd/EEA/fmt/png/Maglia-da-training-calcio-Manchester-City",
+      "Title":"Maglia da training calcio Manchester City",
+      "Size":"XXL",
+      "Description":"Cityzens, preparatevi a dominare il campo come veri fuoriclasse con questa maglia da training Manchester City, pensata esclusivamente per un calcio d’eccellenza. Dotato di struttura leggera e tessuto anti-umidità, questo modello ti permetterà di effettuare sprint nel massimo comfort facendo esultare la tifoseria sugli spalti, proprio come la squadra dei campioni.",
+      "Price":"50,00"
+    },
+
+    {
+      "Img":"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/766163/02/mod01/fnd/EEA/fmt/png/Maglia-Replica-Egitto-Away-22/23-Uomo",
+      "Title":"Maglia Replica Egitto Away 22/23 Uomo",
+      "Size":"XS",
+      "Description":"Mostra il tuo sostegno in viaggio con la maglia da trasferta dell'Egitto 2022. Indossalo mentre vai allo stadio e festeggia mentre la tua squadra alza il trofeo.",
+      "Price":"90,00"
+    },
+
+    {
+      "Img":"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/623048/01/fnd/EEA/fmt/png/T-shirt-Scuderia-Ferrari-x-Joshua-Vides",
+      "Title":"T-shirt Scuderia Ferrari x Joshua Vides",
+      "Size":"L",
+      "Description":"Ispirata allo stile rétro e vintage delle corse Ferrari degli anni ‘70, questa collaborazione con Joshua Vides è arricchita con il suo stile artigianale esclusivo che crea un look da motorsport unico. La T-shirt presenta lo stemma Scuderia Ferrari e i colori vivaci del marchio, il tutto arricchito dall’esclusivo tocco artistico di Joshua Vides. Vorrai indossarla ogni volta che scendi in pista.",
+      "Price":"55,00"
+    },
+
+    {
+      "Img":"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/621137/01/mod01/fnd/EEA/fmt/png/Felpa-con-cappuccio-Mercedes-AMG-Petronas-Motorsport-Garage-Crew",
+      "Title":"Felpa con cappuccio Mercedes AMG Petronas Motorsport Garage Crew",
+      "Size":"XL",
+      "Description":"Hai una passione per Mercedes-AMG Petronas Motorsport? Entra a far parte del team e scendi in pista con questa felpa con cappuccio. Presenta un motivo grafico Mercedes-AMG Petronas Motorsport sul davanti insieme al logo del team sul braccio sinistro.",
+      "Price":"120,00"
+    },
+
+    {
+      "Img":"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/623044/02/mod01/fnd/EEA/fmt/png/Felpa-con-cappuccio-Scuderia-Ferrari-x-Joshua-Vides",
+      "Title":"Felpa con cappuccio Scuderia Ferrari x Joshua Vides",
+      "Size":"M",
+      "Description":"Ispirata allo stile rétro e vintage delle corse Ferrari degli anni ‘70, questa collaborazione con Joshua Vides è arricchita con il suo stile artigianale esclusivo che crea un look da motorsport unico. La felpa con cappuccio presenta stemma Scuderia Ferrari ed elementi a contrasto in colori vivaci, il tutto arricchito dall’esclusivo tocco artistico di Joshua Vides. Vorrai indossarla ogni volta che scendi in pista.",
+      "Price":"120,00"
+    },
+
+    {
+      "Img":"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/770383/01/mod01/fnd/EEA/fmt/png/Maglia-A.C.-Milan-Home-Replica-da-uomo",
+      "Title":"Maglia A.C. Milan Home Replica da uomo",
+      "Size":"S",
+      "Description":"Che tu preferisca fare il tifo dagli spalti o dal divano, il modo migliore per mostrare il tuo supporto alla tua squadra è con questa maglia indossata in casa dai giocatori dell’A.C. Milan.",
+      "Price":"95,00"
+    }
+  ]
+}

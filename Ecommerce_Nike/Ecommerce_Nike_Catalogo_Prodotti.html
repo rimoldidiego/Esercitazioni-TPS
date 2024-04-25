@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Ecommerce Nike | Catalogo Prodotti </title>
+
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/732/732084.png?w=740&t=st=1683995285~exp=1683995885~hmac=8f2940e9807544a678189698f33e4066a4932ffcdc600396e8cf43e270d3e03c">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+  </head>
+
+  <style>
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  body {
+      background-color: White;
+  }
+
+  h1 {
+    font-family: "Audiowide", sans-serif;
+    font-size: 35px;
+    font-weight: normal;
+    color: black;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+  }
+
+  h3 {
+    font-family: "Audiowide", sans-serif;
+    font-size: 12.5px;
+    font-weight: normal;
+    color: black;
+  }
+
+  .nike {
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+  }
+
+  section.content {
+      padding: 50px;
+      width: calc(100% - 60px);
+      min-height: calc(100vh - 60px);
+      margin: 60px 0 0 60px;
+  }
+
+  section.content::after {
+      content: '';
+      display: table;
+      overflow: hidden;
+      clear: both;
+  }
+
+  .sneaker{
+    float: left;
+    width: 350px;
+    margin: 40px;
+  }
+
+  .sneaker .sneaker-top img{
+    max-width: 100%;
+  }
+
+  .sneaker-bottom{
+    margin-top: 20px;
+  }
+
+  .sneaker-bottom-left{
+    float: left;
+    width: 50px;
+  }
+
+  .sneaker-bottom-left img{
+    max-width: 100%
+  }
+
+  .sneaker-bottom-right{
+    float: left;
+    width: calc(100% - 50px);
+    padding: 0 20px;
+    font-size: 10px;
+  }
+
+  #s1{
+    color: gray;
+    margin-top: 5px;
+    font-family: "Audiowide", sans-serif;
+  }
+
+  #s2{
+    color: gray;
+    font-family: "Audiowide", sans-serif;
+  }
+
+  .sneaker-top img {
+    border: 2px solid White;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+  }
+
+  .sneaker-top img:hover {
+    box-shadow: 0 0 4px 3px rgba(0, 140, 186, 0.5);
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+  }
+
+  .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+  }
+
+  .container:hover .image {
+    opacity: 0.3;
+  }
+
+  .container:hover .middle {
+    opacity: 1;
+  }
+
+  .contenuto {
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+  }
+
+  button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: "Audiowide", sans-serif;
+  }
+
+  button.learn-more {
+    width: 12rem;
+    height: auto;
+  }
+
+  button.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 4.5rem;
+    background: #282936;
+    border-radius: 1.625rem;
+  }
+
+  button.learn-more .circle .icon {
+   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   margin: auto;
+   background: #fff;
+  }
+
+  button.learn-more .circle .icon.arrow {
+   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+   left: 0.625rem;
+   width: 1.125rem;
+   height: 0.125rem;
+   background: none;
+  }
+
+  button.learn-more .circle .icon.arrow::before {
+   position: absolute;
+   content: "";
+   top: -0.29rem;
+   right: 0.0625rem;
+   width: 0.625rem;
+   height: 0.625rem;
+   border-top: 0.125rem solid #fff;
+   border-right: 0.125rem solid #fff;
+   transform: rotate(45deg);
+  }
+
+  button.learn-more .button-text {
+   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   padding: 0.75rem 0;
+   margin: 0 0 0 1.85rem;
+   color: #282936;
+   font-weight: 700;
+   line-height: 1.6;
+   text-align: center;
+   text-transform: uppercase;
+  }
+
+  button:hover .circle {
+   width: 100%;
+  }
+
+  button:hover .circle .icon.arrow {
+   background: #fff;
+   transform: translate(1rem, 0);
+  }
+
+  button:hover .button-text {
+   color: #fff;
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: none;
+    color: #0f1923;
+    cursor: pointer;
+    position: relative;
+    padding: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all .15s ease;
+    margin: 25px;
+  }
+
+  .button::before, .button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: calc(50% - 5px);
+    border: 1px solid #7D8082;
+    transition: all .15s ease;
+  }
+
+  .button::before {
+    top: 0;
+    border-bottom-width: 0;
+  }
+
+  .button::after {
+    bottom: 0;
+    border-top-width: 0;
+  }
+
+  .button:active, .button:focus {
+    outline: none;
+  }
+
+  .button:active::before, .button:active::after {
+    right: 3px;
+    left: 3px;
+  }
+
+  .button:active::before {
+    top: 3px;
+  }
+
+  .button:active::after {
+    bottom: 3px;
+  }
+
+  .button_lg {
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #0f1923;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 0px 1px transparent;
+  }
+
+  .button_lg::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background-color: #0f1923;
+  }
+
+  .button_lg::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 4px;
+    height: 4px;
+    background-color: #0f1923;
+    transition: all .2s ease;
+  }
+
+  .button_sl {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: -1px;
+    left: -8px;
+    width: 0;
+    background-color: Cyan;
+    transform: skew(-15deg);
+    transition: all .2s ease;
+  }
+
+  .button_text {
+    position: relative;
+  }
+
+  .button:hover {
+    color: #0f1923;
+  }
+
+  .button:hover .button_sl {
+    width: calc(100% + 15px);
+  }
+
+  .button:hover .button_lg::after {
+    background-color: #fff;
+  }
+
+  label{
+    position: relative;
+    height: 125px;
+    width: 125px;
+    display: inline-block;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    border-left-color: Cyan;
+    animation: rotate 1.2s linear infinite;
+  }
+
+  @keyframes rotate {
+    50%{
+      border-left-color: #9b59b6;
+    }
+    75%{
+      border-left-color: #e67e22;
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+
+  label .check-icon{
+    display: none;
+  }
+
+  label .check-icon:after{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 28px;
+    transform: scaleX(-1) rotate(135deg);
+    height: 56px;
+    width: 28px;
+    border-top: 4px solid Cyan;
+    border-right: 4px solid Cyan;
+    transform-origin: left top;
+    animation: check-icon 0.8s ease;
+  }
+
+  @keyframes check-icon {
+    0%{
+      height: 0;
+      width: 0;
+      opacity: 1;
+    }
+    20%{
+      height: 0;
+      width: 28px;
+      opacity: 1;
+    }
+    40%{
+      height: 56px;
+      width: 28px;
+      opacity: 1;
+    }
+    100%{
+      height: 56px;
+      width: 28px;
+      opacity: 1;
+    }
+  }
+
+  input{
+    display: none;
+  }
+
+  input:checked ~ label .check-icon{
+    display: block;
+  }
+
+  input:checked ~ label{
+    animation: none;
+    border-color: Cyan;
+    transition: border 0.5s ease-out;
+  }
+
+  </style>
+
+  <body>
+
+    <div class="nike">
+
+      <img src="img0.png" alt="" style="height: 75px; width: 75px">
+
+    </div>
+
+    <h1>Ecommerce | Nike</h1>
+
+    <section class="content">
+
+        <div class="sneaker">
+          <div class="sneaker-top">
+
+            <div class="container">
+              <img class="image" src="img1.jpg" alt="" style="height: 350px; width: 350px">
+              <div class="middle">
+                <div class="contenuto">
+                  <button class="learn-more" onclick="Aggiungi('Nike Air Force 1 07 White', 119,99)">
+                    <span class="circle" aria-hidden="true">
+                      <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Aggiungi al Carrello</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="sneaker-bottom">
+            <div class="sneaker-bottom-left">
+              <img src="img0.png" alt="">
+            </div>
+            <div class="sneaker-bottom-right">
+              <h3>Nike Air Force 1 '07</h3>
+              <p id="s1">Scarpa - Uomo</p>
+              <p id="s2">2 Colori</p1>
+              <p id="s2">119,99€</p1>
+            </div>
+          </div>
+        </div>
+
+        <div class="sneaker">
+          <div class="sneaker-top">
+
+            <div class="container">
+              <img class="image" src="img2.jpg" alt="" style="height: 350px; width: 350px">
+              <div class="middle">
+                <div class="contenuto">
+                  <button class="learn-more" onclick="Aggiungi('Nike Dunk Low Green', 119,99)">
+                    <span class="circle" aria-hidden="true">
+                      <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Aggiungi al Carrello</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="sneaker-bottom">
+            <div class="sneaker-bottom-left">
+              <img src="logo1.png" alt="">
+            </div>
+            <div class="sneaker-bottom-right">
+              <h3>Nike Dunk Low</h3>
+              <p id="s1">Scarpa - Uomo</p>
+              <p id="s2">1 Colore</p1>
+              <p id="s2">119,99€</p1>
+            </div>
+          </div>
+        </div>
+
+        <div class="sneaker">
+          <div class="sneaker-top">
+
+            <div class="container">
+              <img class="image" src="img3.jpg" alt="" style="height: 350px; width: 350px">
+              <div class="middle">
+                <div class="contenuto">
+                  <button class="learn-more" onclick="Aggiungi('Nike Air Max Plus Black', 189,99)">
+                    <span class="circle" aria-hidden="true">
+                      <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Aggiungi al Carrello</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="sneaker-bottom">
+            <div class="sneaker-bottom-left">
+              <img src="img0.png" alt="">
+            </div>
+            <div class="sneaker-bottom-right">
+              <h3>Nike Air Max Plus</h3>
+              <p id="s1">Scarpa - Uomo</p>
+              <p id="s2">2 Colori</p1>
+              <p id="s2">189,99€</p1>
+            </div>
+          </div>
+        </div>
+
+        <div class="sneaker">
+          <div class="sneaker-top">
+
+            <div class="container">
+              <img class="image" src="img4.jpg" alt="" style="height: 350px; width: 350px">
+              <div class="middle">
+                <div class="contenuto">
+                  <button class="learn-more" onclick="Aggiungi('Nike Dunk Low Blue', 109,99)">
+                    <span class="circle" aria-hidden="true">
+                      <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Aggiungi al Carrello</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="sneaker-bottom">
+            <div class="sneaker-bottom-left">
+              <img src="logo2.png" alt="">
+            </div>
+            <div class="sneaker-bottom-right">
+              <h3>Nike Dunk Low</h3>
+              <p id="s1">Scarpa - Uomo</p>
+              <p id="s2">1 Colore</p1>
+              <p id="s2">109,99€</p1>
+            </div>
+          </div>
+        </div>
+
+        <div class="sneaker">
+          <div class="sneaker-top">
+
+            <div class="container">
+              <img class="image" src="img5.jpg" alt="" style="height: 350px; width: 350px">
+              <div class="middle">
+                <div class="contenuto">
+                  <button class="learn-more" onclick="Aggiungi('Nike Air Force 1 07 Blue & Yellow', 129,99)">
+                    <span class="circle" aria-hidden="true">
+                      <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Aggiungi al Carrello</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="sneaker-bottom">
+            <div class="sneaker-bottom-left">
+              <img src="logo3.png" alt="" style="height: 50px; width: 40px">
+            </div>
+            <div class="sneaker-bottom-right">
+              <h3>Nike Air Force 1 '07</h3>
+              <p id="s1">Scarpa - Uomo</p>
+              <p id="s2">2 Colori</p1>
+              <p id="s2">129,99€</p1>
+            </div>
+          </div>
+        </div>
+
+        <div class="sneaker">
+          <div class="sneaker-top">
+
+            <div class="container">
+              <img class="image" src="img6.jpg" alt="" style="height: 350px; width: 350px">
+              <div class="middle">
+                <div class="contenuto">
+                  <button class="learn-more" onclick="Aggiungi('Nike Air Max 97 Blue', 189,99)">
+                    <span class="circle" aria-hidden="true">
+                      <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Aggiungi al Carrello</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="sneaker-bottom">
+            <div class="sneaker-bottom-left">
+              <img src="logo2.png" alt="">
+            </div>
+            <div class="sneaker-bottom-right">
+              <h3>Nike Air Max 97</h3>
+              <p id="s1">Scarpa - Uomo</p>
+              <p id="s2">1 Colore</p1>
+              <p id="s2">189,99€</p1>
+            </div>
+          </div>
+        </div>
+
+        <div class="sneaker">
+          <div class="sneaker-top">
+
+            <div class="container">
+              <img class="image" src="img7.jpg" alt="" style="height: 350px; width: 350px">
+              <div class="middle">
+                <div class="contenuto">
+                  <button class="learn-more" onclick="Aggiungi('Air Jordan 1 Next Chapter', 199,99)">
+                    <span class="circle" aria-hidden="true">
+                      <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Aggiungi al Carrello</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="sneaker-bottom">
+            <div class="sneaker-bottom-left">
+              <img src="logo4.png" alt="">
+            </div>
+            <div class="sneaker-bottom-right">
+              <h3>Air Jordan 1 "Next Chapter"</h3>
+              <p id="s1">Scarpa - Uomo</p>
+              <p id="s2">1 Colore</p1>
+              <p id="s2">199,99€</p1>
+            </div>
+          </div>
+        </div>
+
+        <div class="sneaker">
+          <div class="sneaker-top">
+
+            <div class="container">
+              <img class="image" src="img8.jpg" alt="" style="height: 350px; width: 350px">
+              <div class="middle">
+                <div class="contenuto">
+                  <button class="learn-more" onclick="Aggiungi('Air Jordan 11 Retro', 199,99)">
+                    <span class="circle" aria-hidden="true">
+                      <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Aggiungi al Carrello</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="sneaker-bottom">
+            <div class="sneaker-bottom-left">
+              <img src="logo4.png" alt="">
+            </div>
+            <div class="sneaker-bottom-right">
+              <h3>Air Jordan 11 Retro</h3>
+              <p id="s1">Scarpa - Uomo</p>
+              <p id="s2">1 Colore</p1>
+              <p id="s2">199,99€</p1>
+            </div>
+          </div>
+        </div>
+
+        <div class="sneaker">
+          <div class="sneaker-top">
+
+            <div class="container">
+              <img class="image" src="img9.jpg" alt="" style="height: 350px; width: 350px">
+              <div class="middle">
+                <div class="contenuto">
+                  <button class="learn-more" onclick="Aggiungi('Nike Air Force 1 07 Next Nature', 129,99)">
+                    <span class="circle" aria-hidden="true">
+                      <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Aggiungi al Carrello</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="sneaker-bottom">
+            <div class="sneaker-bottom-left">
+              <img src="logo1.png" alt="">
+            </div>
+            <div class="sneaker-bottom-right">
+              <h3>Nike Air Force 1 '07 Next Nature</h3>
+              <p id="s1">Scarpa - Uomo</p>
+              <p id="s2">1 Colore</p1>
+              <p id="s2">129,99€</p1>
+            </div>
+          </div>
+        </div>
+
+        <div class="sneaker">
+          <div class="sneaker-top">
+
+            <div class="container">
+              <img class="image" src="img10.jpg" alt="" style="height: 350px; width: 350px">
+              <div class="middle">
+                <div class="contenuto">
+                  <button class="learn-more" onclick="Aggiungi('Nike Pegasus 40', 129,99)">
+                    <span class="circle" aria-hidden="true">
+                      <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Aggiungi al Carrello</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="sneaker-bottom">
+            <div class="sneaker-bottom-left">
+              <img src="logo0.png" alt="">
+            </div>
+            <div class="sneaker-bottom-right">
+              <h3>Nike Pegasus 40</h3>
+              <p id="s1">Scarpa - Uomo</p>
+              <p id="s2">9 Colori</p1>
+              <p id="s2">129,99€</p1>
+            </div>
+          </div>
+        </div>
+
+        <div class="sneaker">
+          <div class="sneaker-top">
+
+            <div class="container">
+              <img class="image" src="img11.jpg" alt="" style="height: 350px; width: 350px">
+              <div class="middle">
+                <div class="contenuto">
+                  <button class="learn-more" onclick="Aggiungi('Nike Air Zoom Victory', 249,99)">
+                    <span class="circle" aria-hidden="true">
+                      <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Aggiungi al Carrello</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="sneaker-bottom">
+            <div class="sneaker-bottom-left">
+              <img src="logo5.png" alt="" >
+            </div>
+            <div class="sneaker-bottom-right">
+              <h3>Nike Air Zoom Victory</h3>
+              <p id="s1">Scarpa chiodata per le gare sulla distanza</p>
+              <p id="s2">1 Colore</p1>
+              <p id="s2">249,99€</p1>
+            </div>
+          </div>
+        </div>
+
+        <div class="sneaker">
+          <div class="sneaker-top">
+
+            <div class="container">
+              <img class="image" src="img12.jpg" alt="" style="height: 350px; width: 350px">
+              <div class="middle">
+                <div class="contenuto">
+                  <button class="learn-more" onclick="Aggiungi('Nike Streakfly', 159,99)">
+                    <span class="circle" aria-hidden="true">
+                      <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Aggiungi al Carrello</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="sneaker-bottom">
+            <div class="sneaker-bottom-left">
+              <img src="logo4.png" alt="">
+            </div>
+            <div class="sneaker-bottom-right">
+              <h3>Nike Streakfly</h3>
+              <p id="s1">Scarpa da gara su strada</p>
+              <p id="s2">1 Colore</p1>
+              <p id="s2">159,99€</p1>
+            </div>
+          </div>
+        </div>
+
+    </section>
+
+    <div id="popup" class="popup">
+
+      <div class="popup-content">
+
+        <input type="checkbox" id="check">
+        <label for="check">
+          <div class="check-icon"></div>
+        </label>
+
+        <br><br>
+
+        <h3 id="testo"></h3>
+
+        <div class="popup-buttons">
+
+          <button class="button" onclick="closePopup()">
+            <span class="button_lg">
+              <span class="button_sl"></span>
+              <span class="button_text">Continua ad Acquistare</span>
+            </span>
+          </button>
+
+          <button class="button" onclick="goToCheckout()">
+            <span class="button_lg">
+              <span class="button_sl"></span>
+              <span class="button_text">Vai al Pagamento</span>
+            </span>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <p id="out"></p>
+    <p id="out1"></p>
+
+    <script>
+
+    const loader = setTimeout(c, 2500);
+
+    function c() {
+      document.getElementById("check").checked = true;
+      document.getElementById("testo").innerHTML = "Articolo Aggiunto <br> al Carrello"
+    }
+
+    const carrello = [];
+    let totale = 0;
+
+    function Aggiungi(scarpa, prezzo){
+      document.getElementById("popup").style.display = "block";
+      const prodotto = ["Scarpa: "+scarpa, " Prezzo: "+prezzo+"€"];
+      totale = totale + prezzo;
+      carrello.push("<br><br>"+"- " + prodotto);
+
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+
+    function goToCheckout() {
+      const obj = {carrello: carrello, totale: totale};
+      const oggetto = JSON.stringify(obj);
+
+      if (typeof(Storage) !== "undefined") {
+        localStorage.setItem("Oggetto", oggetto);
+      }
+
+      else {
+        document.getElementById("out").innerHTML = "Il browser non supporta lo storage";
+      }
+      document.location.href="Ecommerce_Nike_Carrello.html";
+    }
+    </script>
+
+  </body>
+</html>

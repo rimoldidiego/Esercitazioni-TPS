@@ -1,0 +1,106 @@
+<html>
+    <head>
+
+        <title>Lettura di un File Remoto XML - AJAX XMLHttpRequest</title>
+
+        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1251/1251737.png?w=740&t=st=1670088758~exp=1670089358~hmac=ac302ee05cf1c6435159f818246fa2591abb992ec6c71037b9490d9151b56b80">
+
+        <style>
+
+          body {
+            background-image: url('https://i.pinimg.com/originals/68/e9/e8/68e9e879994d9a7b124bade7d8c63ac6.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+          }
+
+          .button {
+            background-color: #C0C0C0;
+            border-radius: 12px;
+            color: black;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+          }
+
+          .button:hover {
+            background-color: #5600a9;
+            color: white;
+          }
+
+          p {
+            color:white;
+          }
+
+          table, th, td {
+              border: 1px solid white;
+              border-collapse: collapse;
+          }
+
+          th, td {
+              padding: 15px;
+              text-align: center;
+          }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <form action="/action_page.php" method="get">
+
+            <button class="button" type="submit" formaction="index_laboratorio.html">Torna alla Home</button>
+
+            </form>
+
+            <table id="tabellaDati"></table>
+
+            <br>
+
+        <input class="button" type="button" onclick="LeggiFileXML()" value="Leggi File Remoto XML">
+
+        <input class="button" type="button" onclick="ApriFileXML()" value="Apri File Remoto XML">
+
+        <script>
+
+            function LeggiFileXML() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    myFunction(this);
+                }
+            };
+            xhttp.open("GET", "File_xml.xml", true);
+            xhttp.send();
+        }
+
+        function myFunction(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            var table = "<tr><th>Marchio</th><th>Modello</th><th>Anno</th><th>Tipologia</th></tr>";
+            var veicolo = xmlDoc.getElementsByTagName("veicolo");
+            var mrc = xmlDoc.getElementsByTagName("marchio");
+            var mdl = xmlDoc.getElementsByTagName("modello");
+            var an = xmlDoc.getElementsByTagName("anno");
+            for (i = 0; i < mrc.length; i++) {
+                table += "<tr><td>" + mrc[i].getElementsByTagName("casaprod")[0].childNodes[0].nodeValue + "</td><td>" + mdl[i].getElementsByTagName("nome")[0].childNodes[0].nodeValue + "</td><td>" + an[i].getElementsByTagName("numero")[0].childNodes[0].nodeValue + "</td><td>" + veicolo[i].getAttribute("tipologia") + "</td></tr>";
+            }
+            var tabella = document.getElementById("tabellaDati");
+            tabella.style.color = "white";
+            tabella.innerHTML = table;
+        }
+
+        function ApriFileXML(){
+            var link = "File_xml.xml"
+            window.open(link, "_blank");
+        }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,112 @@
+<concessionario>
+    <veicolo tipologia="Autovettura">
+        
+        <marchio>
+            
+            <casaprod>Porsche</casaprod>
+        
+        </marchio>
+        
+        <modello>
+            
+            <nome>911 Turbo S</nome>
+            
+        </modello>
+        
+        <anno>
+            
+            <numero>2022</numero>
+        
+        </anno>
+        
+    </veicolo>
+    
+    <veicolo tipologia="SUV">
+        
+        <marchio>
+            
+            <casaprod>Audi</casaprod>
+        
+        </marchio>
+        
+        <modello>
+            
+            <nome>RS Q8</nome>
+            
+        </modello>
+        
+        <anno>
+            
+            <numero>2023</numero>
+        
+        </anno>
+        
+    </veicolo>
+    
+    <veicolo tipologia="Supercar">
+        
+        <marchio>
+            
+            <casaprod>Lamborghini</casaprod>
+        
+        </marchio>
+        
+        <modello>
+            
+            <nome>Huracan STO</nome>
+            
+        </modello>
+        
+        <anno>
+            
+            <numero>2022</numero>
+        
+        </anno>
+        
+    </veicolo>
+    
+    <veicolo tipologia="Minivan">
+        
+        <marchio>
+            
+            <casaprod>Mercedes-Benz</casaprod>
+        
+        </marchio>
+        
+        <modello>
+            
+            <nome>Classe V</nome>
+            
+        </modello>
+        
+        <anno>
+            
+            <numero>2021</numero>
+        
+        </anno>
+        
+    </veicolo>
+    
+    <veicolo tipologia="Motoveicolo">
+        
+        <marchio>
+            
+            <casaprod>Ducati</casaprod>
+        
+        </marchio>
+        
+        <modello>
+            
+            <nome>Panigale V4R</nome>
+            
+        </modello>
+        
+        <anno>
+            
+            <numero>2023</numero>
+        
+        </anno>
+        
+    </veicolo>
+    
+</concessionario>

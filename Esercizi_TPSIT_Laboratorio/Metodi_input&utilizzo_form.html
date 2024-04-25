@@ -1,0 +1,166 @@
+<html>
+<head>
+  <title>Metodi di input e utilizzo form</title>
+  <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1251/1251737.png?w=740&t=st=1670088758~exp=1670089358~hmac=ac302ee05cf1c6435159f818246fa2591abb992ec6c71037b9490d9151b56b80">
+  <style>
+  body {
+    background-image: url('https://i.pinimg.com/originals/68/e9/e8/68e9e879994d9a7b124bade7d8c63ac6.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  .button {
+    background-color: #C0C0C0;
+    border-radius: 12px;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: #5600a9;
+    color: white;
+  }
+
+  label {
+    color:white;
+  }
+
+</style>
+
+</head>
+
+<body>
+
+  <form>
+    <input type="text" id="nome" name="nome">
+    <input type="text" id="cognome" name="cognome">
+    <input type="text" id="indirizzo" name="indirizzo">
+
+    <br><br>
+
+    <input type="radio" id="sesso1" name="fav_language" value="Uomo">
+    <label for="uomo">Uomo</label>
+    <input type="radio" id="sesso2" name="fav_language" value="Donna">
+    <label for="donna">Donna</label>
+    <input type="radio" id="sesso3" name="fav_language" value="Altro">
+    <label for="altro">Altro</label>
+
+    <br><br>
+
+    <input type="checkbox" id="sport1" name="sport1" value="Tennis">
+    <label for="sport1">Tennis</label>
+    <input type="checkbox" id="sport2" name="sport2" value="Rugby">
+    <label for="sport2">Rugby</label>
+    <input type="checkbox" id="sport3" name="sport3" value="Golf">
+    <label for="sport3">Golf</label>
+
+    <br><br>
+
+    <label for="titolidistudio">Seleziona titolo di studio conseguito: </label>
+    <select name="titolidistudio" id="titolidistudio" size="3">
+      <option value="Laurea">Laurea</option>
+      <option value="Diploma delle Superiori">Diploma delle Superiori</option>
+      <option value="Diploma di Media Inf.">Diploma di Media Inf.</option>
+    </select>
+
+    <br><br>
+
+    <label for="province">Seleziona la provincia lombarda d'appartenenza: </label>
+    <select name="province" id="province">
+      <option value="Bergamo">Bergamo</option>
+      <option value="Brescia">Brescia</option>
+      <option value="Como">Como</option>
+      <option value="Cremona">Cremona</option>
+      <option value="Lecco">Lecco</option>
+      <option value="Lodi">Lodi</option>
+      <option value="Mantova">Mantova</option>
+      <option value="Milano">Milano</option>
+      <option value="Monza e Brianza">Monza e Brianza</option>
+      <option value="Pavia">Pavia</option>
+      <option value="Sondrio">Sondrio</option>
+      <option value="Varese">Varese</option>
+    </select>
+
+    <br><br>
+
+    <input class="button" type="button" onclick="stampa()" value="Stampa Informazioni">
+  </form>
+
+  <form>
+
+    <button class="button" type="submit" formaction="index_laboratorio.html">Torna alla Home</button>
+
+  </form>
+
+  <script>
+  function stampa(){
+    let a=document.getElementById("nome").value;
+    let b=document.getElementById("cognome").value;
+    let c=document.getElementById("indirizzo").value;
+
+    let d;
+
+    if(document.getElementById("sesso1").checked){
+      d=document.getElementById("sesso1").value;
+    }
+    else if(document.getElementById("sesso2").checked){
+      d=document.getElementById("sesso2").value;
+    }
+    else if(document.getElementById("sesso3").checked){
+      d=document.getElementById("sesso3").value;
+    }
+
+    let e;
+
+    if(document.getElementById("sport1").checked && document.getElementById("sport2").checked && document.getElementById("sport3").checked){
+      e=document.getElementById("sport1").value+" "+document.getElementById("sport2").value+" "+document.getElementById("sport3").value;
+    }
+    else if(document.getElementById("sport1").checked && document.getElementById("sport2").checked){
+      e=document.getElementById("sport1").value+" "+document.getElementById("sport2").value;
+    }
+    else if(document.getElementById("sport1").checked && document.getElementById("sport3").checked){
+      e=document.getElementById("sport1").value+" "+document.getElementById("sport3").value;
+    }
+    else if(document.getElementById("sport2").checked && document.getElementById("sport3").checked){
+      e=document.getElementById("sport2").value+" "+document.getElementById("sport3").value;
+    }
+    else if(document.getElementById("sport1").checked ){
+      e=document.getElementById("sport1").value;
+    }
+    else if(document.getElementById("sport2").checked){
+      e=document.getElementById("sport2").value;
+    }
+    else if(document.getElementById("sport3").checked){
+      e=document.getElementById("sport3").value;
+    }
+
+    let f=document.getElementById("titolidistudio").value;
+    let g=document.getElementById("province").value;
+
+    const dati=["Nome: "+a, "<br>Cognome: "+b, "<br>Indirizzo: "+c, "<br>Sesso: "+d, "<br>Interessi: "+e, "<br>Titolo di Studio: "+f, "<br>Provincia d'appartenenza: "+g];
+
+
+    if (typeof(Storage) !== "undefined") {
+
+                    localStorage.setItem("Dati", dati);
+                }
+                else {
+                    document.getElementById("stampa").innerHTML = "Il browser non supporta lo storage";
+                }
+
+                document.location.href="Metodi_input&utilizzo_localStorage.html";
+            }
+
+</script>
+
+</body>
+
+</html>

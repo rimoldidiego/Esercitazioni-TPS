@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Pagina - Visualizzazione - Dati</title>
+  <link rel="icon" type="image/x-icon" href="https://www.freepnglogos.com/uploads/apple-logo-png/apple-logo-png-dallas-shootings-don-add-are-speech-zones-used-4.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+</head>
+
+<style>
+
+  h1, p{
+    font-family: Audiowide;
+  }
+
+  h1{
+    font-size: 45px;
+    color: white;
+  }
+
+  p{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+  }
+
+  body{
+    background-color: black;
+  }
+
+  #immagine {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: slideIn 1.25s ease-in-out forwards;
+  }
+
+  #testo {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: slideIn 1.25s ease-in-out forwards;
+  }
+
+  @keyframes slideIn {
+    0% {left: -100%;}
+    100% {left: 50%;}
+  }
+
+
+</style>
+
+<body>
+
+  <center>
+    <div id="immagine">
+      <img src="https://yt3.googleusercontent.com/ytc/AL5GRJXaGEOx9X-CxtT9I48EI1NxGlBDraDvlQm7rwOVzQ=s900-c-k-c0x00ffffff-no-rj" alt="IMG non disponibile" style="width:200px; height:200px;">
+    </div>
+  </center>
+  <center>
+    <div id="testo">
+      <p id="StampaDati"></p>
+    </div>
+
+  </center>
+
+  <script>
+
+  document.getElementById("StampaDati").innerHTML = "Dati registrazione: <br><br>"+localStorage.getItem("Dati");
+
+  </script>
+
+</body>
+</html>

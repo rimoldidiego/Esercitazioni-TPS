@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>JSON + localStorage</title>
+        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1251/1251737.png?w=740&t=st=1670088758~exp=1670089358~hmac=ac302ee05cf1c6435159f818246fa2591abb992ec6c71037b9490d9151b56b80">
+        <style>
+        body {
+            background-image: url('https://i.pinimg.com/originals/68/e9/e8/68e9e879994d9a7b124bade7d8c63ac6.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+
+        }
+
+        .button {
+            background-color: #C0C0C0;
+            border-radius: 12px;
+            color: black;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #5600a9;
+            color: white;
+        }
+
+        p{
+            color:white;
+        }
+            </style>
+
+    </head>
+
+    <body>
+            <form action="/action_page.php" method="get">
+
+                <button class="button" type="submit" formaction="JSON.html">Torna ai dati anagrafici</button>
+
+            </form>
+
+            <p id="Stampa"></p>
+
+        <script>
+
+          const oggetto = localStorage.getItem("OBJ");
+          const anagrafica = JSON.parse(oggetto);
+          document.getElementById("Stampa").innerHTML = "Nome: " + anagrafica.Nome + "<br>" + "Cognome: " + anagrafica.Cognome + "<br>" + "Email: " + anagrafica.Email + "<br>" + "Residenza: " + anagrafica.Residenza + "<br>" + "Data di nascità: " + anagrafica.Datadinascita;
+
+        </script>
+    </body>
+</html>

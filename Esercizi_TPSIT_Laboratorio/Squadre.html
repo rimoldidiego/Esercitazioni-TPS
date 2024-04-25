@@ -1,0 +1,51 @@
+<html ng-app="myApp" ng-controller="SquadreCtrl">
+<head>
+  <title>Squadre</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
+
+  <style media="screen">
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+  </style>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>NOME</th>
+        <th>NAZIONE</th>
+        <th>VALORE MONETARIO</th>
+        <th>STADIO</th>
+        <th>COMPETIZIONI GIOCATE</th>
+        <th>PALMARES COMPLETO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="squadra in jsonData track by $index">
+        <td>{{ squadra.NOME }}</td>
+        <td>{{ squadra.NAZIONE }}</td>
+        <td>{{ squadra.VALORE }}</td>
+        <td>{{ squadra.STADIO }}</td>
+        <td>{{ squadra.COMPETIZIONI }}</td>
+        <td>{{ squadra.PALMARES }}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

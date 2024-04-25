@@ -1,0 +1,143 @@
+<html>
+    <head>
+
+        <title>Lettura di un File Remoto XML - DOM AJAX XMLHttpRequest</title>
+
+        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1251/1251737.png?w=740&t=st=1670088758~exp=1670089358~hmac=ac302ee05cf1c6435159f818246fa2591abb992ec6c71037b9490d9151b56b80">
+
+        <style>
+
+          body {
+            background-image: url('https://i.pinimg.com/originals/68/e9/e8/68e9e879994d9a7b124bade7d8c63ac6.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+          }
+
+          .button {
+            background-color: #C0C0C0;
+            border-radius: 12px;
+            color: black;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+          }
+
+          .button:hover {
+            background-color: #5600a9;
+            color: white;
+          }
+
+          p {
+            color:white;
+          }
+
+          table {
+              border-collapse: collapse;
+          }
+
+          table, th, td {
+              border: 1px solid white;
+              padding: 15px;
+              text-align: center;
+          }
+
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <form action="index_laboratorio.html" method="get">
+
+            <button class="button" type="submit">Torna alla Home</button>
+
+        </form>
+
+
+            <table id="tabellaDati"></table>
+
+            <br>
+
+        <input class="button" type="button" onclick="LeggiFileXML()" value="Leggi File Remoto XML - DOM">
+
+        <input class="button" type="button" onclick="ApriFileXML()" value="Apri File Remoto XML">
+
+        <script>
+
+            function LeggiFileXML() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        myFunction(this);
+                    }
+                };
+                xhttp.open("GET", "File_xml.xml", true);
+                xhttp.send();
+            }
+
+            function myFunction(xml) {
+                var i;
+                var xmlDoc = xml.responseXML;
+                var table = document.createElement('table');
+                var thead = document.createElement('thead');
+                var tr = document.createElement('tr');
+
+                // Aggiungi le intestazioni delle colonne
+                var headers = ["Marchio", "Modello", "Anno", "Tipologia"];
+                for (var j = 0; j < headers.length; j++) {
+                    var th = document.createElement('th');
+                    th.textContent = headers[j];
+                    tr.appendChild(th);
+                }
+
+                thead.appendChild(tr);
+                table.appendChild(thead);
+
+                var tbody = document.createElement('tbody');
+                var veicolo = xmlDoc.getElementsByTagName("veicolo");
+                var mrc = xmlDoc.getElementsByTagName("marchio");
+                var mdl = xmlDoc.getElementsByTagName("modello");
+                var an = xmlDoc.getElementsByTagName("anno");
+                for (i = 0; i < mrc.length; i++) {
+                    var row = document.createElement('tr');
+
+                    // Aggiungi i dati alle celle della tabella
+                    var data = [
+                        mrc[i].getElementsByTagName("casaprod")[0].childNodes[0].nodeValue,
+                        mdl[i].getElementsByTagName("nome")[0].childNodes[0].nodeValue,
+                        an[i].getElementsByTagName("numero")[0].childNodes[0].nodeValue,
+                        veicolo[i].getAttribute("tipologia")
+                    ];
+
+                    for (var j = 0; j < data.length; j++) {
+                        var td = document.createElement('td');
+                        td.textContent = data[j];
+                        row.appendChild(td);
+                    }
+
+                    tbody.appendChild(row);
+                }
+
+                table.appendChild(tbody);
+                var tabella = document.getElementById("tabellaDati");
+                tabella.innerHTML = '';
+                table.style.color = "white";
+                tabella.appendChild(table);
+            }
+
+            function ApriFileXML() {
+                var link = "File_xml.xml";
+                window.open(link, "_blank");
+            }
+
+
+        </script>
+    </body>
+</html>

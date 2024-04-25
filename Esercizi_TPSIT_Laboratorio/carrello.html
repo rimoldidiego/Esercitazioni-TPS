@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LuxeWardrobeWorld - Carrello</title>
+    <link rel="icon" type="image/x-icon" href="favicon_carrello.png">
+
+<style>
+    
+    p{
+      font-size: 12.5px;
+    }
+
+    body{
+        background-image: url("https://img.freepik.com/free-vector/paper-style-smooth-background_23-2148977880.jpg?w=996&t=st=1703264398~exp=1703264998~hmac=fd87e4b30ea2b823674380c9efc9f32645fbef808412944e30e88b69921d0d1b");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+
+    .box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 90vh;
+    }
+
+    .container{
+        width: 450px;
+        display: flex;
+        background-color: White;
+        border-radius: 20px;
+        flex-direction: column;
+        padding: 0 15px 0 15px;
+    }
+    
+    .button {
+          -moz-appearance: none;
+          -webkit-appearance: none;
+          appearance: none;
+          border: none;
+          background: none;
+          color: #0f1923;
+          cursor: pointer;
+          position: relative;
+          padding: 8px;
+          margin-bottom: 20px;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 14px;
+          transition: all .15s ease;
+        }
+        
+        .button::before,
+        .button::after {
+          content: '';
+          display: block;
+          position: absolute;
+          right: 0;
+          left: 0;
+          height: calc(50% - 5px);
+          border: 1px solid #7D8082;
+          transition: all .15s ease;
+        }
+        
+        .button::before {
+          top: 0;
+          border-bottom-width: 0;
+        }
+        
+        .button::after {
+          bottom: 0;
+          border-top-width: 0;
+        }
+        
+        .button:active,
+        .button:focus {
+          outline: none;
+        }
+        
+        .button:active::before,
+        .button:active::after {
+          right: 3px;
+          left: 3px;
+        }
+        
+        .button:active::before {
+          top: 3px;
+        }
+        
+        .button:active::after {
+          bottom: 3px;
+        }
+        
+        .button_lg {
+          position: relative;
+          display: block;
+          padding: 10px 20px;
+          color: #fff;
+          background-color: #0f1923;
+          overflow: hidden;
+          box-shadow: inset 0px 0px 0px 1px transparent;
+        }
+        
+        .button_lg::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 2px;
+          height: 2px;
+          background-color: #0f1923;
+        }
+        
+        .button_lg::after {
+          content: '';
+          display: block;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 4px;
+          height: 4px;
+          background-color: #0f1923;
+          transition: all .2s ease;
+        }
+        
+        .button_sl {
+          display: block;
+          position: absolute;
+          top: 0;
+          bottom: -1px;
+          left: -8px;
+          width: 0;
+          background-color: #ff4655;
+          transform: skew(-15deg);
+          transition: all .2s ease;
+        }
+        
+        .button_text {
+          position: relative;
+        }
+        
+        .button:hover {
+          color: #0f1923;
+        }
+        
+        .button:hover .button_sl {
+          width: calc(100% + 15px);
+        }
+        
+        .button:hover .button_lg::after {
+          background-color: #fff;
+        }
+
+      .container-buttons {
+        display: flex;
+        justify-content: space-between; /* Imposta la spaziatura tra i bottoni */
+      }
+
+      .button {
+        /* ... Resto dello stile rimane invariato ... */
+        margin-bottom: 0; /* Rimuovi il margine inferiore per evitare spazi aggiuntivi tra i bottoni */
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <center>
+      <div class="contenitore">
+        <div class="box">
+          <div class="container">
+              <div class="container-buttons">
+                <button class="button" onclick="backToCatalogo()">
+                    <span class="button_lg">
+                      <span class="button_sl"></span>
+                      <span class="button_text">Torna al catalogo</span>
+                    </span>
+                  </button>
+                  <button class="button" onclick="viewProduct()">
+                    <span class="button_lg">
+                      <span class="button_sl"></span>
+                      <span class="button_text">Visualizza Prodotti</span>
+                    </span>
+                  </button>
+                </div>
+            <h3>IL TUO CARRELLO: </h3>
+            <hr style="width: 100%; color: black">
+            <br>
+            <div id="StampaDati"></div>
+            <br>
+            <hr style="width: 100%; color: black">
+            <br>
+            <div class="container-buttons">
+              <button class="button" onclick="printFattura()">
+                <span class="button_lg">
+                  <span class="button_sl"></span>
+                  <span class="button_text">Stampa la fattura</span>
+                </span>
+              </button>
+
+              <button class="button" onclick="removeCart()">
+                <span class="button_lg">
+                  <span class="button_sl"></span>
+                  <span class="button_text">Rimuovi prodotti</span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </center>
+
+    <script>
+    
+    var cart = [];
+    
+    function viewProduct(){
+        // Recupera la stringa JSON da localStorage e convertila in un array
+        var storedArray = localStorage.getItem('cart');
+        cart = JSON.parse(storedArray);
+        
+        // Ora puoi utilizzare l'array nella seconda pagina
+        var stampaDatiElement = document.getElementById("StampaDati");
+        
+        // Itera sull'array e costruisci una stringa con un a capo ogni tre elementi
+        var outputString = "";
+        for (var i = 0; i < cart.length; i++) {
+            outputString += cart[i];
+            
+            // Aggiungi un a capo ogni tre elementi (considerando l'indice basato su zero)
+            if ((i + 1) % 3 === 0) {
+                outputString += "<br>";
+            } else {
+                // Aggiungi uno spazio tra gli elementi
+                outputString += " ";
+            }
+        }
+        
+        // Inserisci la stringa con i dati nel tuo elemento HTML
+        stampaDatiElement.innerHTML = outputString;
+    }
+
+      function removeCart(outputString){
+          // Rimuovi tutti gli elementi dal carrello
+          cart = [];
+          // Salva l'array aggiornato nel localStorage
+          localStorage.setItem('cart', JSON.stringify(cart));
+          document.getElementById("StampaDati").innerHTML = "Tutti i prodotti sono stati rimossi";
+      }
+      
+      function printFattura(){
+        // Salvare l'array nel localStorage con una chiave appropriata
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Reindirizzare l'utente alla seconda pagina
+        window.location.href = 'fattura.html';
+      }
+      
+      function backToCatalogo(){
+          window.location.href = 'catalogo.html';
+      }
+    </script>
+  </body>
+</html>

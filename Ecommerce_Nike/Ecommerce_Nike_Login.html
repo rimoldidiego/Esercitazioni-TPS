@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Ecommerce Nike | Login</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/732/732084.png?w=740&t=st=1683995285~exp=1683995885~hmac=8f2940e9807544a678189698f33e4066a4932ffcdc600396e8cf43e270d3e03c">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+  *{
+      font-family: 'poppins' ,sans-serif;
+  }
+  body{
+      background-image: url("https://www.investing.com/academy/wp-content/uploads/2023/02/nike-scaled.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+
+  }
+  .box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 90vh;
+  }
+  .container{
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      padding: 0 15px 0 15px;
+
+  }
+  span{
+      color: #fff;
+      font-size: small;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0 10px 0;
+  }
+  header{
+      color: #fff;
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0 10px 0;
+  }
+
+  .input-field .input{
+      height: 45px;
+      width: 87%;
+      border: none;
+      border-radius: 30px;
+      color: #fff;
+      font-size: 15px;
+      padding: 0 0 0 45px;
+      background: rgba(255,255,255,0.1);
+      outline: none;
+  }
+  i{
+      position: relative;
+      top: -33px;
+      left: 17px;
+      color: #fff;
+  }
+  ::-webkit-input-placeholder{
+      color: #fff;
+  }
+  .submit{
+      border: none;
+      border-radius: 30px;
+      font-size: 15px;
+      height: 45px;
+      outline: none;
+      width: 100%;
+      color: black;
+      background: rgba(255,255,255,0.7);
+      cursor: pointer;
+      transition: .3s ;
+  }
+  .submit:hover{
+      box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+  }
+  .two-col{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      color: #fff;
+      font-size: small;
+      margin-top: 10px;
+  }
+  .one{
+      display: flex;
+  }
+  label a{
+      text-decoration: none;
+      color: #fff;
+  }
+    </style>
+
+</head>
+<body>
+   <div class="box">
+    <div class="container">
+
+        <div class="top">
+          <center>
+            <header>Login <br> Ecommerce Nike</header>
+          </center>
+
+        </div>
+
+        <br>
+
+        <div class="input-field">
+            <input type="text" class="input" placeholder="Username" id="Username">
+            <i class='bx bx-user'></i>
+        </div>
+
+        <div class="input-field">
+            <input type="Password" class="input" placeholder="Password" id="Password">
+            <i class='bx bx-lock-alt'></i>
+        </div>
+
+        <br>
+
+        <div class="input-field">
+            <input type="button" class="submit" onclick="Access()" value="Login">
+        </div>
+    </div>
+</div>
+<script>
+
+    function Access(){
+      let Username=document.getElementById("Username").value;
+      let Password=document.getElementById("Password").value;
+      if(Username=="Rimoldi_Diego" && Password=="Login_Ecommerce_Nike"){
+        location.href = "Ecommerce_Nike_Catalogo_Prodotti.html";
+      }
+      else{
+        window.alert("Non è possibile effettuare il login. "+ "\n" +"Verificare di aver inserito corretamente Username e Password!");
+      }
+    }
+    </script>
+</body>
+</html>

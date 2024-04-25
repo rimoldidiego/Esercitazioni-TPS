@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Pagina - Ringraziamento</title>
+  <link rel="icon" type="image/x-icon" href="https://www.freepnglogos.com/uploads/apple-logo-png/apple-logo-png-dallas-shootings-don-add-are-speech-zones-used-4.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+</head>
+
+<style>
+
+  h1, p{
+    font-family: Audiowide;
+  }
+
+  h1{
+    font-size: 45px;
+    color: white;
+  }
+
+  p{
+    font-size: 22.5px;
+    color: white;
+  }
+
+  body{
+    background-color: black;
+  }
+
+  .button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Audiowide;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid gray;
+    border-radius: 12px;
+  }
+
+  .button:hover {
+    background-color: gray;
+    color: white;
+  }
+
+  #immagine {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: slideIn 1.25s ease-in-out forwards;
+  }
+
+  #testo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: slideIn 1.25s ease-in-out forwards;
+  }
+
+  @keyframes slideIn {
+    0% {left: -100%;}
+    100% {left: 50%;}
+  }
+
+
+</style>
+
+<body>
+
+  <center>
+    <div id="immagine">
+      <img src="https://yt3.googleusercontent.com/ytc/AL5GRJXaGEOx9X-CxtT9I48EI1NxGlBDraDvlQm7rwOVzQ=s900-c-k-c0x00ffffff-no-rj" alt="IMG non disponibile" style="width:200px; height:200px;">
+    </div>
+  </center>
+  <center>
+    <div id="testo">
+      <h1>GRAZIE PER ESSERTI REGISTRATO <br> ALLA NEWSLETTER APPLE</h1>
+      <br>
+      <br>
+      <input class="button" type="button" onclick="PopupCentrata()" value="VISUALIZZA DATI INSERITI">
+    </div>
+  </center>
+
+  <script>
+
+  function PopupCentrata() {
+    var w = 1000;
+    var h = 830;
+    var l = Math.floor((screen.width-w)/2);
+    var t = Math.floor((screen.height-h)/2);
+    window.open("Pagina_Visualizzazione_Dati.html","","width=" + w + ",height=" + h + ",top=" + t + ",left=" + l);
+  }
+
+  </script>
+
+</body>
+</html>

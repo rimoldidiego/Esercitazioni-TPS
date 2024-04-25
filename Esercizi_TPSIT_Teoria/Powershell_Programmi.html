@@ -1,0 +1,229 @@
+<html>
+<head>
+  <title>POWERSHELL - PROGRAMMI</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+	<link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/a/af/PowerShell_Core_6.0_icon.png">
+</head>
+<style>
+
+h1, p, p1{
+  font-family: Audiowide;
+}
+
+h1{
+	font-size: 30px;
+	text-align: center;
+}
+
+p{
+	font-size: 15px;
+}
+
+p1{
+  font-size: 15px;
+  color: red;
+}
+
+</style>
+<body>
+
+<h1>POWERSHELL VERSIONE 1.0</h1>
+
+<p>
+
+  ##################################################
+  <br><br>
+  <p1>#Creazione variabili</p1>
+  <br><br>
+  $nome = "Diego Rimoldi"
+  <br>
+  $n1 = 5
+  <br>
+  $puma = "Scarpe Puma"
+  <br>
+  $n2 = 7
+  <br>
+  $adidas = "Magliette Adidas"
+  <br>
+  $n3 = 3
+  <br>
+  $champions = "Felpe Champions"
+  <br>
+  $npezzi = $n1 + $n2 + $n3
+  <br>
+  $corriere = "GLS"
+  <br>
+  $dataoggi = Get-Date
+  <br>
+  $dataconsegna = $dataoggi.AddDays(7)
+  <br><br>
+  <p1>#Concatenazione di stringhe</p1>
+  <br><br>
+  $concatenazione="Ciao $nome l'ordine da te eseguito, comprende: $n1 paia di $puma, $n2 $adidas, $n3 $champions. Per un totale di $npezzi pezzi in consegna con il corriere: $corriere con raggiungimento del pacco a destinazione in data: $dataconsegna."
+  <br><br>
+  <p1>#Stampa delle variabili</p1>
+  <br><br>
+  Write-Output $concatenazione
+  <br><br>
+  ##################################################
+
+</p>
+
+<h1>POWERSHELL VERSIONE 2.0</h1>
+
+<p>
+
+  ##################################################
+  <br><br>
+  <p1>#Creazione Vettore</p1>
+  <br><br>
+  $args[0]
+  <br>
+  $args[1]
+  <br>
+  $args[2]
+  <br>
+  $args[3]
+  <br>
+  $args[4]
+  <br>
+  $args[5]
+  <br><br>
+  $ordine="L'ordine lo effettua: " + $args[0] + " " + $args[1] + " e comprende: " + $args[2] + " " + $args[3] + " " + $args[4] + " " + $args[5]
+  <br><br>
+  <p1>#Stampa delle informazioni</p1>
+  <br><br>
+  Write-host $ordine
+  <br><br>
+  ##################################################
+
+</p>
+
+<h1>POWERSHELL VERSIONE 3.0</h1>
+
+<p>
+
+  ##################################################
+  <br><br>
+  <p1>#Creazione delle variabili</p1>
+  <br><br>
+  param(
+       <br>
+	     [parameter(Mandatory=$true)][string]$nome,
+       <br>
+	     [parameter(Mandatory=$true)][string]$cognome,
+       <br>
+	     [parameter(Mandatory=$false)][int]$n1,
+       <br>
+	     [parameter(Mandatory=$false)][string]$puma,
+       <br>
+	     [parameter(Mandatory=$false)][int]$n2,
+       <br>
+	     [parameter(Mandatory=$false)][string]$adidas,
+       <br>
+	     [parameter(Mandatory=$false)][int]$n3,
+       <br>
+	     [parameter(Mandatory=$false)][string]$champions
+       <br>
+  )
+
+  <br><br>
+  <p1>#Stampa delle informazioni</p1>
+  <br><br>
+  Write-host "L'ordine di $nome $cognome comprende: $n1 $puma, $n2 $adidas, $n3 $champions"
+  <br><br>
+  ##################################################
+
+</p>
+
+<h1>POWERSHELL VERSIONE 4.0</h1>
+
+<p>
+
+  ##################################################
+  <br><br>
+  <p1>#Inserimento Valori e Creazione Variabili:</p1>
+  <br><br>
+  Write-Host "Inserisci il nome utente"
+  <br><br>
+  $nomeUtente = Read-Host
+  <br><br>
+  Write-Host "Inserisci il primo prodotto del carrello"
+  <br><br>
+  $prodotto1 = Read-Host
+  <br><br>
+  Write-Host "Inserisci il costo del primo prodotto"
+  <br><br>
+  [int]$costoProdotto1 = Read-Host
+  <br><br>
+  Write-Host "Inserisci il secondo prodotto del carrello"
+  <br><br>
+  $prodotto2 = Read-Host
+  <br><br>
+  Write-Host "Inserisci il costo del secondo prodotto"
+  <br><br>
+  [int]$costoProdotto2 = Read-Host
+  <br><br>
+  Write-Host "Inserisci il terzo prodotto del carrello"
+  <br><br>
+  $prodotto3 = Read-Host
+  <br><br>
+  Write-Host "Inserisci il costo del terzo prodotto"
+  <br><br>
+  [int]$costoProdotto3 = Read-Host
+  <br><br>
+  $costoTotaleParziale = $costoProdotto1 + $costoProdotto2 + $costoProdotto3
+  <br><br>
+  $simboloEuro = [char][int]0x20ac
+  <br><br>
+  $bonus = 20
+  <br><br>
+  $messaggio = "Non hai diritto a nessun bonus"
+  <br><br>
+  $costoTotale
+  <br><br>
+  <p1>#Stampa del risultato:</p1>
+  <br><br>
+  Write-Host " "
+  <br><br>
+  Write-Host "L'ordine eseguito da $nomeUtente, contiene: "
+  <br><br>
+  Write-Host " "
+  <br><br>
+  Write-Host "- $prodotto1 dal costo di: $costoProdotto1 $simboloEuro,"
+  <br><br>
+  Write-Host "- $prodotto2 dal costo di: $costoProdotto2 $simboloEuro,"
+  <br><br>
+  Write-Host "- $prodotto3 dal costo di: $costoProdotto3 $simboloEuro."
+  <br><br>
+  Write-Host " "
+  <br><br>
+  Write-Host "Il costo totale senza bonus ammonta a: $costoTotaleParziale $simboloEuro"
+  <br><br>
+  <p1>#Controllo bonus:</p1>
+  <br><br>
+  if($costoTotaleParziale % 2 -eq 0)
+  <br>
+  {
+    <br>
+    $costoTotale = $costoTotaleParziale + $bonus
+    <br>
+    Write-Host "Il costo totale compreso di bonus ammonta a: $costoTotale $simboloEuro"
+    <br>
+  }
+  <br>
+  else
+  <br>
+  {
+    <br>
+    Write-Host $messaggio
+    <br>
+  }
+  <br><br>
+
+  ##################################################
+
+</p>
+
+</body>
+</html>

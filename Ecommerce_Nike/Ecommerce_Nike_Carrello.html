@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Ecommerce Nike | Carrello</title>
+
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/732/732084.png?w=740&t=st=1683995285~exp=1683995885~hmac=8f2940e9807544a678189698f33e4066a4932ffcdc600396e8cf43e270d3e03c">
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+  </head>
+
+  <style>
+
+  *{
+    font-family: "Audiowide", sans-serif;
+    color: White;
+  }
+
+  p{
+    font-size: 12.5px;
+    color: White;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  body{
+      background-image: url("img13.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+  }
+
+  .contenitore{
+    position: absolute;
+    left: 0%;
+  }
+
+  .box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 90vh;
+  }
+
+  .container{
+      width: 450px;
+      display: flex;
+      border: 4px solid Black;
+      border-radius: 20px;
+      flex-direction: column;
+      padding: 0 15px 0 15px;
+
+  }
+
+  </style>
+
+  <body>
+
+    <center>
+
+      <h1><a href="Ecommerce_Nike_Catalogo_Prodotti.html">Ecommerce | Nike - Carrello</a></h1>
+
+    <div class="contenitore">
+
+      <div class="box">
+
+        <div class="container">
+
+          <h3>Carrello: </h3>
+
+          <hr style="width: 100%; color: black">
+
+          <p id="StampaDati"></p>
+
+          <br>
+
+          <hr style="width: 100%; color: black">
+
+          <h3 id="StampaTotale"></h3>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </center>
+
+    <script>
+
+    const obj = localStorage.getItem("Oggetto");
+    const dati = JSON.parse(obj);
+    document.getElementById("StampaDati").innerHTML = dati.carrello;
+    document.getElementById("StampaTotale").innerHTML = "Totale: "+dati.totale+"€";
+
+    </script>
+
+  </body>
+</html>

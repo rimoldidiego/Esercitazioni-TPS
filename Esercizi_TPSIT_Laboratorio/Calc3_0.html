@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Calc3_0</title>
+        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1251/1251737.png?w=740&t=st=1670088758~exp=1670089358~hmac=ac302ee05cf1c6435159f818246fa2591abb992ec6c71037b9490d9151b56b80">
+        <style>
+        body {
+            background-image: url('https://i.pinimg.com/originals/68/e9/e8/68e9e879994d9a7b124bade7d8c63ac6.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .button {
+            background-color: #C0C0C0;
+            border-radius: 12px;
+            color: black;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #5600a9;
+            color: white;
+        }
+
+        p{
+            color:white;
+        }
+        </style>
+    </head>
+    <body>
+        <input type="number" id="N.1" name="N1">
+        <input type="number" id="N.2" name="N2">
+        <p id="Print"></p>
+        <input class="button" type="button" onclick="Operation('Addizione')" value="Add">
+        <input class="button" type="button" onclick="Operation('Sottrazione')" value="Sott">
+        <input class="button" type="button" onclick="Operation('Divisione')" value="Div">
+        <input class="button" type="button" onclick="Operation('Moltiplicazione')" value="Molt">
+        <form>
+            <button class="button" type="submit" formaction="index_laboratorio.html">Torna alla Home</button>
+        </form>
+        <script>
+            function Operation(S){
+                let a=document.getElementById("N.1").value;
+                let b=document.getElementById("N.2").value;
+                a=a*1;
+                b=b*1;
+                let Operation;
+                switch (S){
+                    case "Addizione":
+                        Operation=a+b;
+                        break;
+                    case "Sottrazione":
+                        Operation=a-b;
+                        break;
+                    case "Divisione":
+                        Operation=a/b;
+                        break;
+                    case "Moltiplicazione":
+                        Operation=a*b;
+                        break;
+                }
+                document.getElementById("Print").innerHTML=Operation;
+            }
+        </script>
+    </body>
+</html>

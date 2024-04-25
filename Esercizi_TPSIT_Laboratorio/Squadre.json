@@ -1,0 +1,42 @@
+[
+  {
+    "NOME": "Real Madrid",
+    "NAZIONE": "Spagna",
+    "VALORE": "6,07 miliardi di euro",
+    "STADIO": "Santiago Bernabéu",
+    "COMPETIZIONI": "La Liga, UEFA Champions League e Coppa del Re",
+    "PALMARES": "35 titoli della Liga, 20 Coppe del Re, 1 Coppa della Liga, 13 Supercoppe di Spagna, 1 Coppa Eva Duarte, 14 UEFA Champions League, 2 Coppe UEFA, 5 Supercoppe UEFA, 3 Coppe Intercontinentali e 5 Coppe del mondo per Club."
+  },
+  {
+    "NOME": "AC Milan",
+    "NAZIONE": "Italia",
+    "VALORE": "1,4 miliardi di euro",
+    "STADIO": "Giuseppe Meazza, San Siro",
+    "COMPETIZIONI": "Serie A, Coppa Italia, UEFA Champions Leagues e UEFA Europa League.",
+    "PALMARES": "19 titoli di Serie A, 5 Coppa Italia, 7 Supercoppe Italiane, 7 UEFA Champions League, 2 Coppe delle Coppe, 5 Supercoppe UEFA, 3 Coppe Intercontinentali e 1 Coppa del mondo per Club."
+  },
+  {
+    "NOME": "FC Barcellona",
+    "NAZIONE": "Spagna",
+    "VALORE": "5,51 miliardi di euro",
+    "STADIO": "Camp Nou",
+    "COMPETIZIONI": "La Liga, UEFA Champions League e Coppa del Re.",
+    "PALMARES": "27 titoli della Liga, 31 Coppe del Re, 2 Coppe della Liga, 14 Supercoppe di Spagna, 5 UEFA Champons League, 4 Coppe delle Coppe, 5 Supercoppe UEFA e 3 Coppe del mondo per Club."
+  },
+  {
+    "NOME": "Manchester United",
+    "NAZIONE": "Inghilterra",
+    "VALORE": "6 miliardi di euro",
+    "STADIO": "Old Trafford",
+    "COMPETIZIONI": "Premier League, UEFA Champions League, FA Cup e EFL Cup.",
+    "PALMARES": "20 titoli della Premier League, 12 FA Cup, 6 Carabao Cup, 3 UEFA Champions League, 21 Community Shield, 1 Coppa delle Coppe, 1 Coppa UEFA, 1 Supercoppa UEFA, 1 Coppa Intercontinentale e 1 Coppa del mondo per Club."
+  },
+  {
+    "NOME": "FC Bayern Monaco",
+    "NAZIONE": "Germania",
+    "VALORE": "4,86 miliardi di euro",
+    "STADIO": "Allianz Arena",
+    "COMPETIZIONI": "Bundesliga, DFB-Pokal e UEFA Champions League.",
+    "PALMARES": "33 titoli di Bundesliga, 20 DFB-Pokal, 10 Supercoppe di Germania, 6 UEFA Champions League, 1 Coppa delle Coppe, 1 Coppa UEFA, 2 Supercoppa UEFA, 2 Coppe del mondo per Club."
+  }
+]

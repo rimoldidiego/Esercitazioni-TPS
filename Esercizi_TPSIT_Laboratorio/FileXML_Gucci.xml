@@ -1,0 +1,49 @@
+<prodotti>
+    <prodotto>
+        <immagine>https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1680561687/627055_92TIN_9769_003_100_0000_Light-Cintura-reversibile-GG-Marmont.jpg</immagine>
+        <nome>CINTURA REVERSIBILE GG MARMONT</nome>
+        <prezzo>470</prezzo>
+        <taglia>UNISEX</taglia>
+        <descrizione>Realizzata per essere indossata più e più volte grazie alla versatilità del design, questa cintura in pelle reversibile è presentata in tessuto GG Supreme beige ed ebano e pelle nera. Il riconoscibile hardware con Doppia G completa il design contemporaneo con un richiamo agli archivi.</descrizione>
+    </prodotto>
+
+    <prodotto>
+        <immagine>https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1686588456/759648_FACIQ_9756_003_100_0000_Light-Mocassino-uomo-con-Morsetto.jpg</immagine>
+        <nome>MOCASSINO UOMO CON MORSETTO</nome>
+        <prezzo>820</prezzo>
+        <taglia>48</taglia>
+        <descrizione>Gucci celebra il 70° anniversario sia del motivo Morsetto che del mocassino con nuove reinterpretazioni. I dettagli d'archivio, come il nastro Web, le nappine o il dettaglio mezzo Morsetto, impreziosiscono la nuova collezione di calzature formali in tessuto GG Supreme.</descrizione>
+    </prodotto>
+
+    <prodotto>
+        <immagine>https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1686848451/752266_XJFTA_9692_002_100_0000_Light-Polo-in-spugna-GG-con-dettaglio-Web.jpg</immagine>
+        <nome>POLO IN SPUGNA GG CON DETTAGLIO WEB</nome>
+        <prezzo>1.800</prezzo>
+        <taglia>M</taglia>
+        <descrizione>Simboli che attingono alla storia di Gucci impreziosiscono i capi di tutta la collezione Pre-Fall 2023. Realizzata in una spugna GG bianca, questa polo a maniche corte è arricchita dal Web verde e rosso.</descrizione>
+    </prodotto>
+
+    <prodotto>
+        <immagine>https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1700073255/702390_J8568_9066_003_100_0000_Light-Orecchini-a-bottone-Flora-18-carati-con-Doppia-G.jpg</immagine>
+        <nome>ORECCHINI A BOTTONE FLORA 18 CARATI CON DOPPIA G</nome>
+        <prezzo>5.300</prezzo>
+        <taglia>UNISEX</taglia>
+        <descrizione>Un paio di orecchini a bottone in oro bianco 18 carati con fiori di diamante. Facendo eco al fascino di Gucci per il mondo botanico, il motivo scintillante aggiunge un elemento ecclettico al design. La distintiva Doppia G rende omaggio all'eredità della Maison.</descrizione>
+    </prodotto>
+
+    <prodotto>
+        <immagine>https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1652978720/675769_I4600_8005_003_100_0000_Light-Collana-con-logo-Gucci.jpg</immagine>
+        <nome>COLLANA CON LOGO GUCCI</nome>
+        <prezzo>890</prezzo>
+        <taglia>UNISEX</taglia>
+        <descrizione>Presentato in origine per la collezione Gucci Aria, il dettaglio Gucci corsivo è il punto centrale di questa collana gourmette in metallo color oro. L'Incrocio GG, un omaggio alle iniziali del fondatore Guccio Gucci, appare come un delicato dettaglio che arricchisce la chiusura a moschettone.</descrizione>
+    </prodotto>
+
+    <prodotto>
+        <immagine>https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1686327475/751065_ZANYN_4337_002_100_0000_Light-Camicia-in-cotone-a-righe-con-ricamo.jpg</immagine>
+        <nome>CAMICIA IN COTONE A RIGHE CON RICAMO</nome>
+        <prezzo>550</prezzo>
+        <taglia>L</taglia>
+        <descrizione>I modelli essenziali della collezione Pre-Fall 2023 vengono impreziositi da motivi firmati Gucci. Questa camicia dal taglio boxy presenta una tasca frontale sul petto e mette in risalto un ricamo a cuore Gucci sul polsino.</descrizione>
+    </prodotto>
+</prodotti>

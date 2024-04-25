@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>Canvas</title>
+        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1251/1251737.png?w=740&t=st=1670088758~exp=1670089358~hmac=ac302ee05cf1c6435159f818246fa2591abb992ec6c71037b9490d9151b56b80">
+        <style>
+        body {
+            background-image: url('https://i.pinimg.com/originals/68/e9/e8/68e9e879994d9a7b124bade7d8c63ac6.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .button {
+            background-color: #C0C0C0;
+            border-radius: 12px;
+            color: black;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #5600a9;
+            color: white;
+        }
+
+        p{
+            color:white;
+        }
+        </style>
+    </head>
+    <body>
+
+        <input type="number" id="n" name="n">
+
+        <input type="button" onclick="Drawing()" value="Drawing">
+
+        <br><br>
+
+        <canvas id="canvas" width="400" height="400" style="border: 5px solid #d3d3d3; "></canvas>
+
+         <form>
+            <button class="button" type="submit" formaction="index_laboratorio.html">Torna alla Home</button>
+        </form>
+
+        <script>
+
+            var c = document.getElementById("canvas");
+            var ctx = c.getContext("2d");
+            ctx.strokeStyle = "white";
+            ctx.fillStyle = "white";
+
+            function Drawing(){
+
+                ctx.clearRect(0, 0, c.width, c.height);
+                let n=document.getElementById("n").value;
+                ctx.beginPath();
+
+                let y=n*(c.height/2);
+                let x1=c.width;
+                let x2=0;
+
+                if(n>0 || n<0){
+                    x1=0;
+                    x2=c.width;
+                    y=-y;
+                }
+                else if(n==0){
+                    x1=c.width;
+                    x2=0;
+                    y=0;
+                }
+
+                ctx.moveTo(c.width/2, c.height/2);
+                ctx.lineTo(x1, -y+(c.height/2));
+                ctx.moveTo(c.width/2, c.height/2);
+                ctx.lineTo(x2, y+(c.height/2));
+
+                ctx.moveTo(200,0);
+                ctx.lineTo(200,400);
+                ctx.moveTo(0,200);
+                ctx.lineTo(400,200);
+
+                ctx.font = "15px Arial";
+                ctx.fillText("X",388,215);
+                ctx.font = "15px Arial";
+                ctx.fillText("Y",188,15);
+                ctx.font = "15px Arial";
+                ctx.fillText("O",187,213);
+
+                ctx.stroke();
+            }
+
+        </script>
+    </body>
+</html>

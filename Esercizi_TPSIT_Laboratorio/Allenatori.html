@@ -1,0 +1,53 @@
+<html ng-app="myApp" ng-controller="AllenatoriCtrl">
+<head>
+  <title>Allenatori</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
+
+  <style media="screen">
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+  </style>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>NOME</th>
+        <th>ETA'</th>
+        <th>NAZIONALITA'</th>
+        <th>SQUADRE ALLENATE</th>
+        <th>STILE DI GIOCO</th>
+        <th>TROFEI</th>
+        <th>CITAZIONE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="allenatore in jsonData track by $index">
+        <td>{{ allenatore.NOME }}</td>
+        <td>{{ allenatore.ETA }}</td>
+        <td>{{ allenatore.NAZIONALITA }}</td>
+        <td>{{ allenatore.SQUADRE }}</td>
+        <td>{{ allenatore.STILE }}</td>
+        <td>{{ allenatore.TROFEI }}</td>
+        <td>{{ allenatore.CIT }}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

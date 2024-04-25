@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>LuxeWardrobeWorld - Catalogo</title>
+  <link rel="icon" type="image/x-icon" href="favicon_catalogo.png">
+
+</head>
+
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+
+    body {
+      background-image: url("https://img.freepik.com/free-vector/paper-style-smooth-fluid-background_23-2148965741.jpg?w=1380&t=st=1702738813~exp=1702739413~hmac=9f6f907c6ec690bfada55ee8c5967e6250c3a77795853eb680aa9e2790f7757e");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    
+    button {
+     position: relative;
+     display: inline-block;
+     cursor: pointer;
+     outline: none;
+     border: 0;
+     vertical-align: middle;
+     text-decoration: none;
+     background: transparent;
+     padding: 0;
+     font-size: inherit;
+     font-family: inherit;
+     font-family: 'Gruppo', sans-serif;
+    }
+    
+    button.learn-more {
+     width: 17rem;
+     height: auto;
+    }
+    
+    button.learn-more .circle {
+     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+     position: relative;
+     display: block;
+     margin: 0;
+     width: 3rem;
+     height: 3rem;
+     background: #282936;
+     border-radius: 1.625rem;
+    }
+    
+    button.learn-more .circle .icon {
+     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     margin: auto;
+     background: #fff;
+    }
+    
+    button.learn-more .circle .icon.arrow {
+     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+     left: 0.625rem;
+     width: 1.125rem;
+     height: 0.125rem;
+     background: none;
+    }
+    
+    button.learn-more .circle .icon.arrow::before {
+     position: absolute;
+     content: "";
+     top: -0.29rem;
+     right: 0.0625rem;
+     width: 0.625rem;
+     height: 0.625rem;
+     border-top: 0.125rem solid #fff;
+     border-right: 0.125rem solid #fff;
+     transform: rotate(45deg);
+    }
+    
+    button.learn-more .button-text {
+     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     padding: 0.75rem 0;
+     margin: 0 0 0 1.85rem;
+     color: #282936;
+     font-weight: 700;
+     line-height: 1.6;
+     text-align: center;
+     text-transform: uppercase;
+    }
+    
+    button:hover .circle {
+     width: 100%;
+    }
+    
+    button:hover .circle .icon.arrow {
+     background: #fff;
+     transform: translate(1rem, 0);
+    }
+    
+    button:hover .button-text {
+     color: #fff;
+    }
+    
+    .button {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      border: none;
+      background: none;
+      color: #0f1923;
+      cursor: pointer;
+      position: relative;
+      padding: 8px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 14px;
+      transition: all .15s ease;
+    }
+    
+    .button::before,
+    .button::after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      left: 0;
+      height: calc(50% - 5px);
+      border: 1px solid #7D8082;
+      transition: all .15s ease;
+    }
+    
+    .button::before {
+      top: 0;
+      border-bottom-width: 0;
+    }
+    
+    .button::after {
+      bottom: 0;
+      border-top-width: 0;
+    }
+    
+    .button:active,
+    .button:focus {
+      outline: none;
+    }
+    
+    .button:active::before,
+    .button:active::after {
+      right: 3px;
+      left: 3px;
+    }
+    
+    .button:active::before {
+      top: 3px;
+    }
+    
+    .button:active::after {
+      bottom: 3px;
+    }
+    
+    .button_lg {
+      position: relative;
+      display: block;
+      padding: 10px 20px;
+      color: #fff;
+      background-color: #0f1923;
+      overflow: hidden;
+      box-shadow: inset 0px 0px 0px 1px transparent;
+    }
+    
+    .button_lg::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 2px;
+      background-color: #0f1923;
+    }
+    
+    .button_lg::after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 4px;
+      height: 4px;
+      background-color: #0f1923;
+      transition: all .2s ease;
+    }
+    
+    .button_sl {
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: -1px;
+      left: -8px;
+      width: 0;
+      background-color: #ff4655;
+      transform: skew(-15deg);
+      transition: all .2s ease;
+    }
+    
+    .button_text {
+      position: relative;
+    }
+    
+    .button:hover {
+      color: #0f1923;
+    }
+    
+    .button:hover .button_sl {
+      width: calc(100% + 15px);
+    }
+    
+    .button:hover .button_lg::after {
+      background-color: #fff;
+    }
+
+    h1 {
+      font-family: 'Gruppo', sans-serif;
+      font-size: 65px;
+    }
+
+    .radio-inputs {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 0.5rem;
+      background-color: #EEE;
+      box-sizing: border-box;
+      box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+      padding: 0.25rem;
+      width: 1000px;
+      font-size: 14px;
+    }
+
+    .radio-inputs .radio {
+      flex: 1 1 auto;
+      text-align: center;
+    }
+
+    .radio-inputs .radio input {
+      display: none;
+    }
+
+    .radio-inputs .radio .name {
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5rem;
+      border: none;
+      padding: .5rem 0;
+      color: rgba(51, 65, 85, 1);
+      transition: all .15s ease-in-out;
+    }
+
+    .radio-inputs .radio input:checked + .name {
+      background-color: #fff;
+      font-weight: 600;
+    }
+
+    #main-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; /* Distribuisci gli spazi tra i container */
+        align-items: flex-start; /* Allinea gli elementi lungo il bordo superiore del container */
+        margin: 20px 70px; /* Aumenta lo spazio dall'alto e compensa lo spazio negativo ai margini */
+    }
+    
+    .product-container {
+        border: 1px solid black;
+        padding: 8px;
+        margin: 35px 0; /* Aumenta lo spazio sopra e sotto i container */
+        width: calc(26% - -25px); /* Larghezza fissa con spazi di 10px ai lati */
+        box-sizing: border-box;
+        border-radius: 20px;
+        height: 500px; /* Altezza fissa per i container */
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .product-image {
+        width: 100%;
+        height: 70%; /* Altezza dell'immagine in percentuale rispetto all'altezza del container */
+        object-fit: contain; /* Mantiene le proporzioni dell'immagine senza tagliarla */
+        margin-bottom: 10px; /* Aggiungi spazio tra l'immagine e il nome */
+    }
+    
+    .product-name {
+        margin-top: 10px;
+        flex-grow: 1; /* Fai espandere il nome in modo che il pulsante rimanga in basso */
+        font-family: 'Gruppo', sans-serif;
+        color: black;
+        font-size: 20px;
+    }
+    
+    .details-button {
+        width: 40%; /* Larghezza massima per allineare i pulsanti */
+        align-self: center; /* Allinea il pulsante al centro */
+        margin-top: -25px; /* Aggiungi margine sopra il pulsante */
+        margin-bottom: 10px;
+    }
+    
+    #popupContent{
+        margin-top: 10px;
+        flex-grow: 1; /* Fai espandere il nome in modo che il pulsante rimanga in basso */
+        font-family: 'Gruppo', sans-serif;
+        color: black;
+        font-size: 20px;
+    }
+    
+    #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Opacità del 50% */
+    }
+
+    #popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 20px;
+        z-index: 1000; /* Z-index superiore per il popup */
+        border-radius: 20px;
+        width: 500px; 
+        height: 500px;
+        overflow: auto;
+    }
+    
+    #iconContainerCarrello {
+        position: fixed;
+        top: 50px; /* Regola la distanza dalla parte superiore */
+        right: 10px; /* Regola la distanza dalla parte destra */
+    }
+
+    #iconContainerCarrello img {
+        height: 60px;
+        width: 60px;
+        cursor: pointer;
+    }
+    
+    #iconContainerLogo {
+        position: fixed;
+        top: 10px; /* Regola la distanza dalla parte superiore */
+        left: -30px; /* Regola la distanza dalla parte sinistra */
+    }
+
+    #iconContainerLogo img {
+        height: 140px;
+        width: 140px;
+        cursor: pointer;
+    }
+    
+    #contenitore {
+      display: flex;
+      width: 70%;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Gruppo', sans-serif;
+      font-size: 45px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      text-transform: uppercase;
+    }
+    
+</style>
+
+<body>
+    
+  <div id="iconContainerCarrello">
+        <img src="iconaCarrello.png" onclick="goToCheckOut()" alt="Icona Carrello">
+  </div>
+  
+  <div id="iconContainerLogo">
+        <img src="logoEcommerce.png" onclick="returnInTop()" alt="Logo">
+  </div>
+
+  <center>
+
+    <h1>LuxeWardrobeWorld</h1>
+
+    <div class="radio-inputs">
+      <label class="radio">
+        <input type="radio" name="radio" onclick="functionCSV_NIKE()">
+        <span class="name"><img src="https://pngimg.com/d/nike_PNG6.png" width="140" height="80"></span>
+      </label>
+      <label class="radio">
+        <input type="radio" name="radio" onclick="functionXML_ADIDAS()">
+        <span class="name"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Logo_Adidas.png" width="120" height="80"></span>
+      </label>
+      <label class="radio">
+        <input type="radio" name="radio" onclick="functionJSON_PUMA()">
+        <span class="name"><img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Puma-Logo.png" width="130" height="80"></span>
+      </label>
+      <label class="radio">
+        <input type="radio" name="radio" onclick="functionCSV_MONCLER()">
+        <span class="name"><img src="https://www.abtechsolution.it/wp-content/uploads/2016/05/LogoHeader_Desktop_ds.png" width="90" height="80"></span>
+      </label>
+      <label class="radio">
+        <input type="radio" name="radio" onclick="functionCSV_UNDERARMOUR()">
+        <span class="name"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Under_armour_logo.svg/1200px-Under_armour_logo.svg.png" width="140" height="80"></span>
+      </label>
+      <label class="radio">
+        <input type="radio" name="radio" onclick="functionXML_GUCCI()">
+        <span class="name"><img src="https://freepngimg.com/thumb/logo/111921-logo-gucci-black-png-image-high-quality.png" width="130" height="80"></span>
+      </label>
+      <label class="radio">
+        <input type="radio" name="radio" onclick="functionJSON_CHANEL()">
+        <span class="name"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/92/Chanel_logo_interlocking_cs.svg/1200px-Chanel_logo_interlocking_cs.svg.png" width="130" height="80"></span>
+      </label>
+    </div>
+    
+    <div id="contenitore">Seleziona una tra le case di moda</div>
+
+    <div id="main-container"></div>
+
+    <div id="overlay"></div>
+
+    <div id="popup">
+        <div id="popup-content">
+    </div>
+    
+        <button class="button" onclick="closePopup()">
+            <span class="button_lg">
+                <span class="button_sl"></span>
+                <span class="button_text">Continua gli acquisti</span>
+            </span>
+        </button>
+        
+        <button class="button" id="bottoneAcquista">
+            <span class="button_lg">
+                <span class="button_sl"></span>
+                <span class="button_text">Aggiungi al carrello</span>
+            </span>
+        </button>
+        
+    </div>
+
+  </center>
+
+  <script>
+  
+        var cart = [];
+        
+        document.addEventListener("DOMContentLoaded", function() {
+        // Aggiungi un listener per il cambio di stato del radiobutton
+        var radioButtons = document.getElementsByName("radio");
+        for (var i = 0; i < radioButtons.length; i++) {
+            radioButtons[i].addEventListener("change", function() {
+                // Ottieni il div con l'id "ciaoDiv"
+                var contenitore = document.getElementById("contenitore");
+
+                // Nascondi il div quando il radiobutton è selezionato
+                if (this.checked) {
+                    contenitore.style.display = "none";
+                } else {
+                    contenitore.style.display = "block";
+                }
+            });
+        }
+    });
+  
+        function createProductContainer(imgSrc, name, size, description, price) {
+            var productContainer = document.createElement('div');
+            productContainer.classList.add('product-container');
+        
+            var imgElement = document.createElement('img');
+            imgElement.src = imgSrc;
+            imgElement.classList.add('product-image');
+        
+            var nameElement = document.createElement('div');
+            nameElement.textContent = name;
+            nameElement.classList.add('product-name');
+        
+            var button = document.createElement('button');
+            button.classList.add('learn-more');
+            button.innerHTML = `
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Dettagli prodotto</span>
+            `;
+            button.addEventListener('click', function () {
+            openPopup(imgSrc, name, size, description, price);
+            });
+        
+            // Aggiungi stili CSS per centrare il pulsante e applicare il margine inferiore
+            button.style.display = 'block';
+            button.style.margin = '0 auto';
+            button.style.marginBottom = '10px';
+        
+            productContainer.appendChild(imgElement);
+            productContainer.appendChild(nameElement);
+            productContainer.appendChild(button);
+        
+            return productContainer;
+        }
+        
+        function openPopup(imgSrc, name, size, description, price) {
+            var overlay = document.getElementById("overlay");
+            var popup = document.getElementById("popup");
+            tuaFunzionePopup(imgSrc, name, size, description, price);
+            overlay.style.display = "block";
+            popup.style.display = "block";
+        }
+        
+       function tuaFunzionePopup(imgSrc, name, size, description, price) {
+            var popup = document.getElementById("popup");
+            var popupContent = document.getElementById("popup-content");
+        
+            // Cancella il contenuto precedente del popup
+            while (popupContent.firstChild) {
+                popupContent.removeChild(popupContent.firstChild);
+            }
+        
+            // Aggiungi le informazioni al popup
+            var imgElement = document.createElement("img");
+            imgElement.src = imgSrc;
+            imgElement.style = 'height: 275px; width: 250px';
+            imgElement.classList.add("popup-image");
+        
+            var nameElement = document.createElement("h2");
+            nameElement.textContent = name;
+        
+            var sizeElement = document.createElement("p");
+            sizeElement.textContent = "Size: " + size;
+        
+            var descriptionElement = document.createElement("p");
+            descriptionElement.textContent = "Description: " + description;
+        
+            var priceElement = document.createElement("p");
+            priceElement.textContent = "Price: " + price + "€";
+        
+            popupContent.appendChild(imgElement);
+            popupContent.appendChild(nameElement);
+            popupContent.appendChild(sizeElement);
+            popupContent.appendChild(descriptionElement);
+            popupContent.appendChild(priceElement);
+        
+            popup.style.display = "block";
+            
+            var bottoneAcquista = document.getElementById("bottoneAcquista");
+            // Verifica se il bottone è valido
+            if (bottoneAcquista) {
+                // Definisci la funzione di gestione dell'evento
+                function gestisciClic() {
+                    // Questa funzione verrà chiamata quando il bottone viene cliccato
+                    addToCart(name, size, price);
+                    // Rimuovi il click dopo che è stato eseguito una volta
+                    bottoneAcquista.removeEventListener("click", gestisciClic);
+                }
+                // Aggiungi il clic sul bottone
+                bottoneAcquista.addEventListener("click", gestisciClic);
+            }
+        }
+        
+        function closePopup() {
+            var overlay = document.getElementById("overlay");
+            var popup = document.getElementById("popup");
+            overlay.style.display = "none";
+            popup.style.display = "none";
+        }
+        
+        function addToCart(name, size, price){
+            cart.push(name);
+            cart.push(size);
+            cart.push(price + "€");
+            // Converti l'array in una stringa JSON e salvala in localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.alert('PRODOTTO AGGIUNTO AL CARRELLO');
+        }
+        
+        function goToCheckOut(){
+             window.location.href = 'carrello.html';
+        }
+        
+        function returnInTop(){
+            window.scrollTo(0, 0);
+        }
+    
+        function functionCSV_NIKE() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                let Stringa = this.responseText;
+                var righe = Stringa.split('\n');
+    
+                var mainContainer = document.getElementById("main-container");
+                mainContainer.innerHTML = '';
+    
+                for (var i = 0; i < righe.length; i++) {
+                    var riga = righe[i];
+    
+                    // Trova gli elementi tra virgolette
+                    var colonne = riga.match(/"(.*?)"/g);
+    
+                    if (colonne && colonne.length >= 5) {
+                        // Assumiamo che il primo elemento sia l'URL dell'immagine
+                        var imgSrc = colonne[0].replace(/"/g, '');
+    
+                        // Il secondo elemento è il nome del prodotto
+                        var name = colonne[1].replace(/"/g, '');
+    
+                        // Il terzo elemento è la taglia
+                        var size = colonne[2].replace(/"/g, '');
+    
+                        // Il quarto elemento è la descrizione
+                        var description = colonne[3].replace(/"/g, '');
+    
+                        // Il quinto elemento è il prezzo
+                        var price = colonne[4].replace(/"/g, '');
+    
+                        // Utilizza la funzione createProductContainer per creare il container del prodotto
+                        var productContainer = createProductContainer(imgSrc, name, size, description, price);
+    
+                        // Aggiungi il container alla pagina
+                        mainContainer.appendChild(productContainer);
+                    }
+                }
+            }
+        };
+    
+        xhttp.open("GET", "FileCSV_Nike.csv", true);
+        xhttp.send();
+    }
+    
+        function functionXML_ADIDAS() {
+        var scarpeContainer = document.getElementById("main-container");
+        scarpeContainer.innerHTML = "";
+    
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "FileXML_Adidas.xml", true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var xmlDoc = xhr.responseXML;
+                var scarpe = xmlDoc.getElementsByTagName("prodotto");
+    
+                for (var i = 0; i < scarpe.length; i++) {
+                    var img = scarpe[i].getElementsByTagName("immagine")[0].textContent;
+                    var nome = scarpe[i].getElementsByTagName("nome")[0].textContent;
+                    var prezzo = scarpe[i].getElementsByTagName("prezzo")[0].textContent;
+                    var taglia = scarpe[i].getElementsByTagName("taglia")[0].textContent;
+                    var descrizione = scarpe[i].getElementsByTagName("descrizione")[0].textContent;
+    
+                    // Utilizza la funzione createProductContainer per creare il container del prodotto
+                    var productContainer = createProductContainer(img, nome, taglia, descrizione, prezzo);
+    
+                    // Aggiungi il container alla pagina
+                    scarpeContainer.appendChild(productContainer);
+                }
+            }
+        };
+        xhr.send();
+    }
+        
+        function functionJSON_PUMA() {
+            var container = document.getElementById("main-container");
+            container.innerHTML = '';
+        
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "FileJSON_Puma.json", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    var products = data.Puma; // Modifica il nome dell'array in base alla struttura effettiva del tuo JSON
+        
+                    for (var i = 0; i < products.length; i++) {
+                        var img = products[i].Img;
+                        var title = products[i].Title;
+                        var size = products[i].Size;
+                        var description = products[i].Description;
+                        var price = products[i].Price;
+        
+                        // Utilizza la funzione createProductContainer per creare il container del prodotto
+                        var productContainer = createProductContainer(img, title, size, description, price);
+        
+                        // Aggiungi il container alla pagina
+                        container.appendChild(productContainer);
+                    }
+                }
+            };
+            xhr.send();
+        }
+    
+    
+        function functionCSV_MONCLER() {
+              var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        let Stringa = this.responseText;
+                        var righe = Stringa.split('\n');
+            
+                        var mainContainer = document.getElementById("main-container");
+                        mainContainer.innerHTML = '';
+            
+                        for (var i = 0; i < righe.length; i++) {
+                            var riga = righe[i];
+            
+                            // Trova gli elementi tra virgolette
+                            var colonne = riga.match(/"(.*?)"/g);
+            
+                            if (colonne) {
+                                // Assumiamo che il primo elemento sia l'URL dell'immagine e il secondo sia il nome del prodotto
+                                var imgSrc = colonne[0].replace(/"/g, '');
+                                var name = colonne[1].replace(/"/g, '');
+                                // Il terzo elemento è la taglia
+                                var size = colonne[2].replace(/"/g, '');
+            
+                                // Il quarto elemento è la descrizione
+                                var description = colonne[3].replace(/"/g, '');
+            
+                                // Il quinto elemento è il prezzo
+                                var price = colonne[4].replace(/"/g, '');
+            
+                                // Utilizza la funzione createProductContainer per creare il container del prodotto
+                                var productContainer = createProductContainer(imgSrc, name, size, description, price);
+                    
+                                // Aggiungi il container alla pagina
+                                mainContainer.appendChild(productContainer);
+                            }
+                        }
+                    }
+                };
+            
+                xhttp.open("GET", "FileCSV_Moncler.csv", true);
+                xhttp.send();
+                      
+        }
+    
+        function functionCSV_UNDERARMOUR() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    let Stringa = this.responseText;
+                    var righe = Stringa.split('\n');
+        
+                    var mainContainer = document.getElementById("main-container");
+                    mainContainer.innerHTML = '';
+        
+                    for (var i = 0; i < righe.length; i++) {
+                        var riga = righe[i];
+        
+                        // Trova gli elementi tra virgolette
+                        var colonne = riga.match(/"(.*?)"/g);
+        
+                        if (colonne) {
+                            // Assumiamo che il primo elemento sia l'URL dell'immagine e il secondo sia il nome del prodotto
+                            var imgSrc = colonne[0].replace(/"/g, '');
+                            var name = colonne[1].replace(/"/g, '');
+                            // Il terzo elemento è la taglia
+                            var size = colonne[2].replace(/"/g, '');
+        
+                            // Il quarto elemento è la descrizione
+                            var description = colonne[3].replace(/"/g, '');
+        
+                            // Il quinto elemento è il prezzo
+                            var price = colonne[4].replace(/"/g, '');
+        
+                            // Utilizza la funzione createProductContainer per creare il container del prodotto
+                            var productContainer = createProductContainer(imgSrc, name, size, description, price);
+            
+                            // Aggiungi il container alla pagina
+                            mainContainer.appendChild(productContainer);
+                        }
+                    }
+                }
+            };
+        
+            xhttp.open("GET", "FileCSV_UnderArmour.csv", true);
+            xhttp.send();
+                  
+        }
+    
+          function functionXML_GUCCI() {
+                var scarpeContainer = document.getElementById("main-container");
+                scarpeContainer.innerHTML = "";
+            
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "FileXML_Gucci.xml", true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var xmlDoc = xhr.responseXML;
+                        var scarpe = xmlDoc.getElementsByTagName("prodotto");
+            
+                        for (var i = 0; i < scarpe.length; i++) {
+                            var img = scarpe[i].getElementsByTagName("immagine")[0].textContent;
+                            var nome = scarpe[i].getElementsByTagName("nome")[0].textContent;var prezzo = scarpe[i].getElementsByTagName("prezzo")[0].textContent;
+                            var taglia = scarpe[i].getElementsByTagName("taglia")[0].textContent;
+                            var descrizione = scarpe[i].getElementsByTagName("descrizione")[0].textContent;
+            
+                            // Utilizza la funzione createProductContainer per creare il container del prodotto
+                            var productContainer = createProductContainer(img, nome, taglia, descrizione, prezzo);
+            
+                            // Aggiungi il container alla pagina
+                            scarpeContainer.appendChild(productContainer);
+                        }
+                    }
+                };
+                xhr.send();
+          }
+    
+          function functionJSON_CHANEL() {
+        var container = document.getElementById("main-container");
+        container.innerHTML = '';
+    
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "FileJSON_Chanel.json", true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var data = JSON.parse(xhr.responseText);
+                var products = data.Chanel; // Correggi il nome della chiave in base alla struttura effettiva del tuo JSON
+    
+                for (var i = 0; i < products.length; i++) {
+                    var img = products[i].Img;
+                    var title = products[i].Title;
+                    var size = products[i].Size;
+                    var description = products[i].Description;
+                    var price = products[i].Price;
+        
+                        // Utilizza la funzione createProductContainer per creare il container del prodotto
+                    var productContainer = createProductContainer(img, title, size, description, price);
+    
+                    // Aggiungi il container alla pagina
+                    container.appendChild(productContainer);
+                }
+            }
+        };
+        xhr.send();
+    }
+
+  </script>
+
+</body>
+</html>
